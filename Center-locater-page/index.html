@@ -71,6 +71,44 @@
             background: #2563eb;
             color: white;
         }
+
+        @media (min-width: 768px) {
+            .ham-btn {
+                display: none;
+            }
+
+            .nav-menu {
+                position: static;
+                height: auto;
+                width: auto;
+                flex-direction: row;
+                align-items: center;
+                background: transparent;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .logo-container img {
+                height: 70px;
+                width: auto;
+            }
+
+            #map {
+                width: 700px;
+                height: 700px;
+                margin-left: 40px;
+                border-radius: 10px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #map {
+                width: 1000px;
+                height: 1000px;
+                margin: auto;
+                border-radius: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -93,9 +131,20 @@
 
     <script>
         let map;
+        let service;
+        let markers = [];
+
+        const cityLocations = {
+            Bengaluru: { lat: 12.9716, lng: 77.5946 },
+            Mysuru: { lat: 12.2958, lng: 76.6394 },
+            Mangaluru: { lat: 12.9141, lng: 74.8560 },
+            Hubballi: { lat: 15.3647, lng: 75.1240 },
+            Belagavi: { lat: 15.8497, lng: 74.4977 },
+            Shivamogga: { lat: 13.9299, lng: 75.5681 }
+        };
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: 15.3173, lng: 75.7139 }, // Karnataka
+                center: { lat: 15.3173, lng: 75.7139 }, //Using Karnataka Lat and Lng
                 zoom: 7
             });
         }
@@ -116,7 +165,6 @@
                     map.setCenter(userLocation);
                     map.setZoom(14);
 
-                    clearMarkers();
 
                     // User marker
                     new google.maps.Marker({
@@ -131,6 +179,35 @@
                     alert("Location permission denied");
                 }
             );
+        }
+        function searchByCity(city) {
+            if (!city) return;
+
+            const location = cityLocations[city];
+
+            map.setCenter(location);
+            map.setZoom(13);
+
+            findHelpCenters(location);
+        }
+        function findHelpCenters(location) {
+            service = new google.maps.places.PlacesService(map);
+
+            const request = {
+                location: location,
+                radius: 8000,
+                keyword: "government office"
+            };
+
+            service.nearbySearch(request, (results, status) => {
+                console.log("Places status:", status);
+
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    results.forEach(addMarker);
+                } else {
+                    alert("No government help centers found: " + status);
+                }
+            });
         }
 
     </script>
