@@ -71,7 +71,6 @@
             background: #2563eb;
             color: white;
         }
-
     </style>
 </head>
 
@@ -89,8 +88,20 @@
                 <option value="Shivamogga"> Shivamogga</option>
             </select>
         </div>
-        <div class="map"></div>
+        <div id="map"></div>
     </main>
+
+    <script>
+        let map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 15.3173, lng: 75.7139 }, // Karnataka
+                zoom: 7
+            });
+        }
+        
+    </script>
+      
 </body>
 
 </html>
