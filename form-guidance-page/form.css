@@ -1,0 +1,28 @@
+:root {
+    --bg-cream: #FDFBED;
+    --teal-dark: #0D4D4D;
+    --green-accent: #22C55E;
+    --white: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f2dc;
+  color: #222;
+  overflow-x: hidden;
+}
+.header {
+  background: #5f7f78;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.scheme-hero {
+  background-color: var(--teal-dark);
+  color: var(--white);
+  padding: 25px 25px;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+  margin-bottom: 30px;
+}
