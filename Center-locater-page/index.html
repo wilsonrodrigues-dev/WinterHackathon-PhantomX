@@ -165,6 +165,7 @@
                     map.setCenter(userLocation);
                     map.setZoom(14);
 
+                    clearMarkers();
 
                     // User marker
                     new google.maps.Marker({
@@ -188,6 +189,7 @@
             map.setCenter(location);
             map.setZoom(13);
 
+            clearMarkers();
             findHelpCenters(location);
         }
         function findHelpCenters(location) {
@@ -208,6 +210,36 @@
                     alert("No government help centers found: " + status);
                 }
             });
+        }
+
+        function addMarker(place) {
+            const marker = new google.maps.Marker({
+                map,
+                position: place.geometry.location,
+                title: place.name
+            });
+
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+        <strong>${place.name}</strong><br>
+        ${place.vicinity || ""}<br>
+        <a target="_blank"
+           href="https://www.google.com/maps/place/?q=place_id:${place.place_id}">
+           Open in Google Maps
+        </a>
+      `
+            });
+
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+
+            markers.push(marker);
+        }
+
+        function clearMarkers() {
+            markers.forEach(m => m.setMap(null));
+            markers = [];
         }
 
     </script>
