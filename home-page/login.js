@@ -1,3 +1,36 @@
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword
+} from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  serverTimestamp
+} from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+//firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyA50b7_sCWGCc91E5V49CDRQGkl1S40ds4",
+  authDomain: "sevasaathi-96010.firebaseapp.com",
+  projectId: "sevasaathi-96010",
+  appId: "1:695605361402:web:7efc728f6c32d16d166743"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
+
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const loginBtn = document.getElementById("loginBtn");
