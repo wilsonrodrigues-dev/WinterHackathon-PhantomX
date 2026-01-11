@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SevaSaathi</title>
+    <link rel="stylesheet" href="schemes.css">
+    <link rel="stylesheet" href="schemes.css">
+</head>
+
+<body>
+    <!-- GLOBAL LOADER -->
+    <div id="ss-loader">
+        <div class="ss-loader-box">
+            <div class="ss-spinner"></div>
+            <p class="ss-loading-text">Loading Seva Sathi…</p>
+        </div>
+    </div>
+    <nav>
+        <div class="logo-container">
+            <img src="../images/logostrok.png" alt="Logo">
+        </div>
+
+        <div class="ham-btn" id="menuToggle" aria-label="Toggle menu" role="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-menu" id="sideNav">
+            <a href="../home-page/index.html">Home</a>
+            <a href="../home-page/index.html">About</a>
+            <a href="../schemes/index.html">Schemes</a>
+            <a href="../doc-updates/index.html">Updates</a>
+            <button class="lang-btn" ><span>Language</span><span>▾</span></button>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <section class="scheme-hero">
+      <h1>Government Schemes</h1>
+      <p>Empowering you with simple guidance and safe access.</p>
+  </section>
+  
+  <section class="categories-section">
+      <div class="category-grid">
+          <div class="cat-card" onclick="loadSchemes('senior')">
+              <span class="cat-icon">👵</span>
+              <h3>Senior Citizen</h3>
+              <p>Healthcare, travel, and savings schemes for elders.</p>
+              <button class="more-btn" >View More</button>
+          </div>
+          <div class="cat-card" onclick="loadSchemes('farmer')">
+              <span class="cat-icon">👨‍🌾</span>
+              <h3>Farmer Schemes</h3>
+              <p>Financial support and subsidies for agriculture.</p>
+              <button class="more-btn" >View More</button>
+          </div>
+          <div class="cat-card" onclick="loadSchemes('women')">
+              <span class="cat-icon">👩</span>
+              <h3>Women Schemes</h3>
+              <p>Support for health, education, and small business.</p>
+              <button class="more-btn">View More</button>
+          </div>
+          <div class="cat-card" onclick="loadSchemes('pension')">
+              <span class="cat-icon">💰</span>
+              <h3>Pension & Benefits</h3>
+              <p>Monthly security for a dignified retired life.</p>
+              <button class="more-btn">View More</button>
+          </div>
+      </div>
+  </section>
+  
+  <section id="dynamic-display" class="dynamic-container">
+      <div class="placeholder-text">Click a category above to view available schemes.</div>
+  </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
