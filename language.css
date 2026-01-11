@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'pop';
+    src: url(./fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: 'gt';
+    src: url(./fonts/GreaterTheory.otf);
+}
+body{
+    font-family: 'pop';
+    background: url(https://media.istockphoto.com/id/1493059312/photo/simple-3d-background-template-for-white-box-or-room.jpg?s=170667a&w=0&k=20&c=SGdBDx738Zfq3mWmkZn3jW17P2mqB6N9hVHpGtT1wAI=);
+    background-size: cover;
+    background-position: center;
+    font-weight: bold;
+}
+.lang-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+img{
+    width: 350px;
+    margin-bottom: -50px;
+}
+
+.lang-container h2 {
+text-align: center;
+font-family: 'gt';
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight:100 ;
+  color: rgb(0, 128, 66);
+  margin-top: -10px;
+}
+
+.lang-container button {
+  width: 200px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background: #0f4c81;
+  color: #fff;
+}
+i{
+    font-size: 25px;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
