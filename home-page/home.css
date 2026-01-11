@@ -1,0 +1,107 @@
+/* ===== LOGIN PAGE ===== */
+.login-page {
+  min-height: 100vh;
+  /* background:
+  url("../demo/img/hero.jpeg");
+  background-size: cover; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== CARD ===== */
+.login-card {
+ background: linear-gradient(
+    rgba(245,247,250,0.65),
+    rgba(245,247,250,0.65)
+  ),
+  url("../demo/img/hero.jpeg") no-repeat center/cover;
+
+  width: 380px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+/* ===== TEXT ===== */
+.login-card h1 {
+  margin-bottom: 8px;
+  color: #1a4fa3;
+}
+
+.login-subtext {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 22px;
+}
+
+/* ===== INPUTS ===== */
+.login-card input {
+
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ===== BUTTONS ===== */
+.primary-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1a4fa3;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 14px;
+  background: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  margin: 18px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* ===== FOOT TEXT ===== */
+.login-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #666;
+}
+
+.error-text {
+  color: #c62828;
+  margin-top: 10px;
+}
+.success-text {
+  color: #1b8f3c;
+  font-size: 14px;
+  margin-top: 10px;
+}
