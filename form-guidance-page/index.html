@@ -13,5 +13,29 @@
     <h1 data-key="hero.header">Form Guidance</h1>
     <p data-key="hero.paragraph">Empowering you with simple guidance and safe access.</p>
   </section>
+
+  <main class="container">
+    
+    <section class="upload-section">
+      <h2 data-key="main.section1.header">Upload Your Form (Optional)</h2>
+      <p class="upload-text" data-key="main.section1.paragraph">
+        If you already have a government form (photo or PDF),
+        you can upload it here to identify the form and get guidance.
+      </p>
+
+      <div class="upload-box">
+        <input type="file" id="formUpload" accept=".pdf,image/*">
+        <label for="formUpload" class="upload-btn" data-key="main.section1.upload-box.label">
+          📄 Choose File
+        </label>
+        <span id="fileName" data-key="main.section1.upload-box.span">No file selected</span>
+      </div>
+
+      <p class="upload-note" data-key="main.section1.note">
+        🔒 We do not store your file. This is only for guidance.
+      </p>
+    </section>
+
+     </main>
 </body>
 </html>
