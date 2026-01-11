@@ -1,3 +1,4 @@
+import { initializeApp } from
 "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 
 import {
@@ -70,10 +71,17 @@ async function handleUserRedirect(user) {
     }
   }}
 
+  function showSuccess(msg) {
+  document.getElementById("error").innerText = "";
+  document.getElementById("success").innerText = msg;
+}
+
+
 //google login
 googleBtn.addEventListener("click", async () => {
   try {
     const result = await signInWithPopup(auth, provider);
+    showSuccess("Signed in successfully. Welcome to SevaSaathi!");
     await handleUserRedirect(result.user);
   } catch (err) {
     errorText.innerText = err.message;
