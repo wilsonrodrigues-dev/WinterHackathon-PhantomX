@@ -52,3 +52,22 @@ loginBtn.addEventListener("click", async () => {
   }
 });
 
+//create account with email-password
+signupBtn.addEventListener("click", async () => {
+  try {
+    const result = await createUserWithEmailAndPassword(
+      auth,
+      emailInput.value,
+      passwordInput.value
+    );
+
+    document.getElementById("error").innerText = "";
+    document.getElementById("success").innerText = "Account created successfully! Welcome to SevaSaathi.";
+
+    await handleUserRedirect(result.user);
+  } catch (err) {
+    document.getElementById("success").innerText = "";
+    errorText.innerText = err.message;
+  }
+});
+
