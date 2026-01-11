@@ -70,6 +70,15 @@ async function handleUserRedirect(user) {
     }
   }}
 
+//google login
+googleBtn.addEventListener("click", async () => {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    await handleUserRedirect(result.user);
+  } catch (err) {
+    errorText.innerText = err.message;
+  }
+});
 
 //email-password login
 loginBtn.addEventListener("click", async () => {
