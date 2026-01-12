@@ -135,6 +135,12 @@ nav {
     z-index: 999;
 }
 
+.nav-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 .signup-btn {
     width: 110px;
     background: crimson;
