@@ -4,9 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../global.css">
     <title>SevaSaathi</title>
   </head>
   <body>
+      <nav>
+        <div class="logo-container">
+            <img src="../images/logostrok.png" alt="Logo">
+        </div>
+
+        <div class="ham-btn" id="menuToggle" aria-label="Toggle menu" role="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-menu" id="sideNav">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="../schemes/index.html">Schemes</a>
+            <a href="../doc-updates/index.html">Updates</a>
+            <a href="#log-in"><button class="signup-btn">Sign Up</button></a>
+            <!-- <button class="lang-btn"> <span data-key="nav.language">Language </span><span>▾</span></button> -->
+            <div class="lang-wrapper">
+                <button class="lang-btn" type="button">
+                    <span>Language</span>
+                    <span class="arrow">▾</span>
+                </button>
+
+                <div class="lang-dropdown">
+                    <button >English</button>
+                    <button >ಕನ್ನಡ</button>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
     <section class="login-page">
     
   <div class="hero-left">
@@ -51,6 +88,57 @@
 </div>
 </div>
 </section>
+
+
+<footer>
+        <div class="footer-content">
+            <div class="footer-links-container">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="../scam-page/index.html">Schemes</a></li>
+                        <li><a href="../doc-updates-page/index.html">Updates</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="../schemes/index.html">Government Schemes</a>
+                        </li>
+                        <li><a href="../form-guidance-page/index.html">Form Guidance</a></li>
+                        <li><a href="../notice-explainer/index.html">Notice
+                                Explainer</a></li>
+                        <li><a href="../scam-page/index.html">Scam Alert</a></li>
+                        <li><a href="../doc-updates-page/index.html">Doc Updates</a></li>
+                        <li><a href="../location feature/helpcenter.html">Help Center
+                                Locator</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <!-- <p class="footer-disclaimer">
+                    We only provide guidance. All submissions happen on official government portals.
+                </p> -->
+                <p class="footer-copyright">
+                    © 2026 SevaSaathi. All rights reserved.
+                </p>
+            </div>
+        </div>
+
+        <!-- Diagonal Green Triangle -->
+        <div class="footer-triangle"></div>
+
+        <!-- Logo in Triangle -->
+        <div class="footer-logo">
+            <img src="../images/logo.png" alt="SevaSaathi Logo" class="footer-logo-img">
+        </div>
+    </footer>
+
 <script type="module" src="login.js"></script>
   </body>
 </html>

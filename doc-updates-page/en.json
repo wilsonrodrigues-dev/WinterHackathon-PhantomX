@@ -1,0 +1,73 @@
+{
+    "hero":{
+      "header":"Documents Updates & Guidelines",
+      "paragraph":"Stay informed about the latest documet updates and requirements."
+    },
+    "urgent-banner":{
+        "paragraph":"URGENT: Adhaar-PAN linking deadline extended to March 31, 2026"
+    },
+    "container":{
+        "header":"Recent Updates",
+        "paragraph":"Latest notifications and changes in document requirements.",
+        "updates-grid":{
+            "update1":{
+                "div1":{
+                    "span":"NEW",
+                    "header":"PAN 2.0 Launched",
+                    "date":"January 5,2026"
+                },
+                "description": "New PAN card with QR code feature launched. Free upgrade available for all existing PAN cardholders.",
+                "div2": {
+                    "header1": "What's New?",
+                    "description": "The Income Tax Department has launched PAN 2.0 - an upgraded version of the PAN card with enhanced security features including a QR code that contains all your details.",
+                    "header2": "Key Features",
+                    "ul1": {
+                        "li1": "QR code with encrypted information",
+                        "li2": "Enhanced security features",
+                        "li3": "Faster processing time (3-5 days)",
+                        "li4": "Free upgrade for existing cardholders",
+                        "li5": "Same PAN number retained"
+                    },
+                    "header3": "How to Upgrade",
+                    "ul2": {
+                        "li1": "Visit the official Income Tax e-filing portal",
+                        "li2": "Login using your PAN and password",
+                        "li3": "Click on Request for PAN 2.0",
+                        "li4": "Verify your details and submit",
+                        "li5": "New card will be delivered to your registered address"
+                    },
+                    "link": "Visit official Portal"
+                }
+            },
+            "update2":{
+                "div1":{
+                    "span":"IMPORTANT",
+                    "header":"Digital Ration Card",
+                    "date":"December 20, 2025"
+                },
+                "description":"All states to adopt digital ration cards by June 2026. Learn how to get yours.",
+                "div2":{
+                    "header1": "What's Changing?",
+                    "description": "Government is digitizing ration cards across all states. You'll receive a digital card that can be accessed through the Mera Ration mobile app.",
+                    "header2": "Benefits",
+                    "ul1": {
+                        "li1": "Access ration from any Fair Price Shop in India",
+                        "li2": "No need to carry physical card",
+                        "li3": "Real-time tracking of entitlements",
+                        "li4": "Transparent distribution system",
+                        "li5": "Instant notifications"
+                    },
+                    "header3": "How to Get Digital Card",
+                    "ul2": {
+                        "li1": "Download Mera Ration app from Play Store",
+                        "li2": "Enter your ration card number",
+                        "li3": "Verify with Aadhaar OTP",
+                        "li4": "Your digital card will be activated",
+                        "li5": "Link family members' Aadhaar for biometric authentication"
+                    },
+                    "link": "Learn More"
+                }
+            }
+        }
+    }
+}
