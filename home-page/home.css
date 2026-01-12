@@ -71,6 +71,7 @@ body {
     text-align: center;
     overflow: hidden;
 }
+
 /*img section*/
 .hero-visual {
     /* border: 2px solid rebeccapurple; */
@@ -379,6 +380,7 @@ body {
 /* ===== LOGIN PAGE ===== */
 .login-page {
 background: linear-gradient(to top,#f8f1ef,#ffffff);
+
   min-height: 100vh;
   /* background:
   url("../demo/img/hero.jpeg");
@@ -412,6 +414,7 @@ background: linear-gradient(to top,#f8f1ef,#ffffff);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* background:url(../images/sevasaathi.png) center/cover no-repeat; */
 }
 
 .hero-left h1 {
@@ -427,7 +430,7 @@ background: linear-gradient(to top,#f8f1ef,#ffffff);
 }
 
 .hero-right {
-  width: 420px;
+  width: 27%;
   display: flex;
   align-items: center;
   justify-content: center;
