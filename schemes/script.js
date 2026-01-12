@@ -95,6 +95,8 @@ const schemeData = {
     }
   ]
 };
+
+
 function loadSchemes(category) {
     const display = document.getElementById('dynamic-display');
     const schemes = schemeData[category];
@@ -116,8 +118,126 @@ function loadSchemes(category) {
 </div>
 `;
     });
-        
+    
     html += `</div>`;
     display.innerHTML = html;
     display.scrollIntoView({ behavior: 'smooth' });
+}
+
+function showPopup(cat, index) {
+    const s = schemeData[cat][index];
+    const display = document.getElementById('dynamic-display');
+
+    display.innerHTML = `
+        <div class="scheme-detail-popup">
+            <button class="back-link" onclick="window.speechSynthesis.cancel(); loadSchemes('${cat}')">← Back to List</button>
+            
+            <h2>${s.title}</h2>
+
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="showTab('eligibility', this)">Eligibility</button>
+                <button class="tab-btn" onclick="showTab('benefits', this)">Benefits</button>
+                <button class="tab-btn" onclick="showTab('documents', this)">Documents</button>
+                <button class="tab-btn" onclick="showTab('steps', this)">Steps</button>
+            </div>
+
+            <div id="tab-content" class="tab-content"></div>
+
+            <div class="action-buttons">
+                <button class="voice-btn" onclick="speakCurrentTab()">🔊 Listen</button>
+
+                <a href="${s.link}" target="_blank" class="apply-btn">official link</a>
+                <a href="../form-page/index.html" class="apply-btn">How To Apply</a>
+            </div>
+
+        </div>
+        
+    `;
+
+    window.currentScheme = s;
+showTab("eligibility", document.querySelector(".tab-btn"));
+
+}
+
+function showTab(tab, btn) {
+    currentTab = tab;
+    const s = window.currentScheme;
+    let rawText = "";
+
+    if (tab === "eligibility") rawText = s.eligibility;
+    if (tab === "benefits") rawText = s.benefits;
+    if (tab === "documents") rawText = s.documents;
+    if (tab === "steps") rawText = s.steps;
+
+    const icons = {
+        eligibility: "✅",
+        benefits: "💰",
+        documents: "📄",
+        steps: "🛠️"
+    };
+
+    let points = [];
+
+    if (tab === "steps") {
+        rawText = rawText.replace(/\d+\./g, "");
+        points = rawText.split(",").filter(p => p.trim() !== "");
+    } else {
+        points = rawText.split(",").filter(p => p.trim() !== "");
+    }
+
+    let html = `<h4>${icons[tab]} ${tab.toUpperCase()}</h4><ul class="info-list">`;
+
+    points.forEach(p => {
+        html += `<li>${p.trim()}</li>`;
+    });
+
+    html += "</ul>";
+
+    document.getElementById("tab-content").innerHTML = html;
+
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+}
+
+function speakCurrentTab() {
+    const s = window.currentScheme;
+    let text = "";
+    let heading = "";
+
+    if (currentTab === "eligibility") {
+        heading = "Eligibility";
+        text = s.eligibility;
+    }
+    if (currentTab === "benefits") {
+        heading = "Benefits";
+        text = s.benefits;
+    }
+    if (currentTab === "documents") {
+        heading = "Documents required";
+        text = s.documents;
+    }
+    if (currentTab === "steps") {
+        heading = "Steps to apply";
+        text = s.steps;
+    }
+
+    // Clean text for better speech (remove commas being read too fast)
+    const cleanText = text.replace(/,/g, ". ");
+
+    const speech = `${heading}. ${cleanText}`;
+
+    window.speechSynthesis.cancel();
+    const msg = new SpeechSynthesisUtterance(speech);
+    msg.rate = 0.9;
+    msg.lang = "en-IN";
+
+    window.speechSynthesis.speak(msg);
+}
+
+
+function speakText(text) {
+    window.speechSynthesis.cancel(); // Stop any previous voice
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.9; // Slightly slower for clarity
+    window.speechSynthesis.speak(utterance);
 }
