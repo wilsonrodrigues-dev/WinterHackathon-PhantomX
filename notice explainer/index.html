@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Notice Reader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <!-- Tesseract OCR -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+    }
+
+    header {
+      background: #1e40af;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 25px auto;
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .upload-box {
+      border: 2px dashed #94a3b8;
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 14px;
+      font-size: 18px;
+      background: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: #0f766e;
+    }
+
+    button.stop {
+      background: #991b1b;
+    }
+
+    .status {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 160px;
+      margin-top: 15px;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    pre {
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+<header>AI Notice Reader</header>
+
+<div class="container">
+
+  <div class="upload-box" onclick="fileInput.click()">
+    Upload Government Notice<br>(PDF / PNG / JPG)
+    <input type="file" id="fileInput" hidden accept=".pdf,.png,.jpg,.jpeg" />
+  </div>
+
+  <button id="readBtn" disabled>Read & Explain</button>
+
+  <div class="status" id="statusText">No file uploaded</div>
+
+  <textarea id="rawText" placeholder="Extracted text will appear here..."></textarea>
+  <div style="display:flex; gap:10px; margin-bottom:15px;">
+  <button onclick="setLanguage('en')" id="enBtn">English</button>
+  <button onclick="setLanguage('kn')" id="knBtn">ಕನ್ನಡ</button>
+</div>
+
+  <h3>📘 Simple Explanation</h3>
+  <pre id="explanation"></pre>
+
+  <button class="secondary" onclick="playExplanation()">▶ Play Explanation</button>
+  <button class="stop" onclick="stopSpeech()">⏹ Stop</button>
+
+  <h3>📝 Short Summary</h3>
+  <pre id="summary"></pre>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+
+<script>
+    if (!localStorage.getItem("language")) {
+  localStorage.setItem("language", "en");
+}
+
+function setLanguage(lang) {
+  localStorage.setItem("language", lang);
+
+  document.getElementById("enBtn").style.opacity =
+    lang === "en" ? "1" : "0.5";
+  document.getElementById("knBtn").style.opacity =
+    lang === "kn" ? "1" : "0.5";
+}
+  const fileInput = document.getElementById("fileInput");
+  const readBtn = document.getElementById("readBtn");
+  const statusText = document.getElementById("statusText");
+  const rawText = document.getElementById("rawText");
+
+  let uploadedFile = null;
+
+  // default language (simulate earlier language page)
+  localStorage.setItem("language", "en"); // change to "kn" to test Kannada
+
+  fileInput.addEventListener("change", () => {
+    uploadedFile = fileInput.files[0];
+    if (uploadedFile) {
+      statusText.innerText = "File selected: " + uploadedFile.name;
+      readBtn.disabled = false;
+    }
+  });
+
+  readBtn.addEventListener("click", () => {
+    rawText.value = "";
+    document.getElementById("explanation").innerText = "";
+    document.getElementById("summary").innerText = "";
+
+    if (uploadedFile.type === "application/pdf") {
+      extractFromPDF(uploadedFile);
+    } else {
+      extractFromImage(uploadedFile);
+    }
+  });
+
+  async function extractFromPDF(file) {
+    statusText.innerText = "Extracting text from PDF...";
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(file);
+
+    reader.onload = async () => {
+      const pdf = await pdfjsLib.getDocument(new Uint8Array(reader.result)).promise;
+      let text = "";
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const content = await page.getTextContent();
+        text += content.items.map(i => i.str).join(" ") + "\n\n";
+      }
+
+      rawText.value = text;
+      sendToAI(text);
+    };
+  }
+
+  async function extractFromImage(file) {
+    statusText.innerText = "Running OCR...";
+    const result = await Tesseract.recognize(file, "eng+kan");
+    rawText.value = result.data.text;
+    sendToAI(result.data.text);
+  }
+
+  async function sendToAI(text) {
+    statusText.innerText = "AI is explaining the notice...";
+    const lang = localStorage.getItem("language") || "en";
+
+    const res = await fetch("http://localhost:3000/api/explain", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, language: lang })
+    });
+
+    const data = await res.json();
+    displayAIResult(data.result);
+  }
+
+function displayAIResult(text) {
+  document.getElementById("explanation").innerText = text;
+  document.getElementById("summary").innerText =
+    "Summary is included above.";
+  statusText.innerText = "AI response received ✅";
+}
+
+function cleanTextForSpeech(text) {
+  return text
+    // remove markdown symbols
+    .replace(/\*\*/g, "")
+    .replace(/[*_#>-]/g, "")
+    // remove extra colons and headings
+    .replace(/EXPLANATION:/gi, "")
+    .replace(/SUMMARY:/gi, "")
+    // remove bullet points
+    .replace(/•/g, "")
+    // collapse extra spaces
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+
+  // 🔊 TEXT TO SPEECH
+ function playExplanation() {
+  const rawText = document.getElementById("explanation").innerText;
+  if (!rawText) return;
+
+  const cleanText = cleanTextForSpeech(rawText);
+
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(cleanText);
+
+  utter.lang =
+    localStorage.getItem("language") === "kn" ? "kn-IN" : "en-IN";
+  utter.rate = 0.9;
+  utter.pitch = 1;
+
+  speechSynthesis.speak(utter);
+}
+
+  function stopSpeech() {
+    speechSynthesis.cancel();
+  }
+</script>
+
+
+</body>
+</html>

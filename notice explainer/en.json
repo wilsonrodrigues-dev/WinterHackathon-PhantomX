@@ -1,0 +1,48 @@
+{
+    "header":"AI Notice Reader",
+
+    "container":{
+        "upload-box":"Upload Government Notice (PDF / PNG / JPG)",
+        "button":"Read & Explain",
+        "text":"No file uploaded",
+
+        "lang-btn":"English",
+
+        "header1":"Simple Explanation",
+
+        "btn1":"Play Explanation",
+        "btn2":"Stop",
+
+        "header2":"Short Summary"
+    }
+    ,
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "schemes": "Schemes",
+        "updates": "Updates",
+        "signup": "Sign Up",
+        "language": "Language"
+    },
+    "footer": {
+        "column1": {
+            "home": "Home",
+            "about": "About",
+            "schemes": "Schemes",
+            "updates": "Updates"
+        },
+        "column2": {
+            "link": {
+                "a1": "Government Schemes",
+                "a2": "Form Guidance",
+                "a3": "Notice Explainer",
+                "a4": "Scam Alert",
+                "a5": "Doc Updates",
+                "a6": "Help Center Locator"
+            }
+        },
+        "copyright": "© 2026 SevaSaathi. All rights reserved."
+    }
+
+
+}

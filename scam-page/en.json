@@ -1,0 +1,70 @@
+{
+    "hero": {
+        "div": "Stay safe from every scams."
+    },
+    "warning-section": {
+        "header": "Common Red Flags & New Scams",
+        "warning-grid1": {
+            "scam-card1": {
+                "div": "URGENT",
+                "header": "Digital Arrest",
+                "paragraph": "Scammers pose as Police or CBI on video calls, saying you are arrested and must stay on camera for hours. Fact: Police never arrest anyone over video call."
+            },
+            "scam-card2": {
+                "div": "NEW AI SCAM",
+                "header": "AI Voice Cloning",
+                "paragraph": "You might get a call that sounds 100% like your grandchild crying for help. Scammers use AI to copy their voice. Tip: Always call them back on their real number first."
+            },
+            "scam-card3": {
+                "header": "Electricity Bill Trap",
+                "paragraph": "An SMS says Your power will be cut tonight at 9 PM due to unpaid bills. It asks you to call a number. Reality:Real bill departments never send personal phone numbers in SMS."
+            },
+            "scam-card4": {
+                "header": "The Fake Bank Call",
+                "paragraph": "Claims your ATM card is blocked and asks for an OTP. Real banks will never ask for your OTP or PIN over the phone."
+            },
+            "scam-card5": {
+                "header": "Fake Parcel Scams",
+                "paragraph": "Someone says a parcel in your name contains illegal items and you must pay to clear it. Just hang up—it's a scam to scare you."
+            },
+            "scam-card6": {
+                "header": "KBC / Lottery Fraud",
+                "paragraph": "WhatsApp messages saying you've won ₹25 Lakhs. They ask for a small processing fee first. Once you pay, they disappear."
+            }
+        }
+    },
+    "report-section": {
+        "header": "Think you've been targeted?",
+        "paragraph": "Don't wait. Call the National Cybercrime Helpline immediately.",
+        "link": "Call 1930 Now",
+        "note": "Available 24/7 across India"
+    }
+    ,
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "schemes": "Schemes",
+        "updates": "Updates",
+        "signup": "Sign Up",
+        "language": "Language"
+    },
+    "footer": {
+        "column1": {
+            "home": "Home",
+            "about": "About",
+            "schemes": "Schemes",
+            "updates": "Updates"
+        },
+        "column2": {
+            "link": {
+                "a1": "Government Schemes",
+                "a2": "Form Guidance",
+                "a3": "Notice Explainer",
+                "a4": "Scam Alert",
+                "a5": "Doc Updates",
+                "a6": "Help Center Locator"
+            }
+        },
+        "copyright": "© 2026 SevaSaathi. All rights reserved."
+    }
+}
