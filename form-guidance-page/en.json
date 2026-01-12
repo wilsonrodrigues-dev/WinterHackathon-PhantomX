@@ -1,0 +1,104 @@
+{
+    "hero": {
+        "header": "Form Guidance",
+        "paragraph": "Empowering you with simple guidance and safe access."
+    },
+    "main": {
+        "section1": {
+            "header": "Upload Your Form (Optional)",
+            "paragraph": "If you already have a government form (photo or PDF),you can upload it here to identify the form and get guidance.",
+            "upload-box": {
+                "label": "Choose File",
+                "span": "No file selected"
+            },
+            "note": " We do not store your file. This is only for guidance."
+        },
+        "section2": {
+            "header": "Select a Form"
+        },
+        "div": {
+            "note": "Click a category above to view available schemes."
+        },
+        "section3": {
+            "guide-card": {
+                "button": "Back to List",
+                "header": "",
+                "p1": "Eligibility",
+                "p2": "Benefits",
+                "p3": "Documents",
+                "p4": "Steps to Apply",
+                "div1": {
+                    "header": "Official Form",
+                    "link": "Open / Download PDF"
+                },
+                "div2": {
+                    "btn1": "Listen",
+                    "btn2": "Stop",
+                    "link": "Apply on Official Website"
+                }
+            }
+        },
+        "section4": {
+            "header": "Important Guidance Before Applying",
+            "paragraph": " Please read these points carefully before filling any government form.",
+            "guidance-list": {
+                "div1": {
+                    "header": "Things You SHOULD Do",
+                    "ul": {
+                        "li1": "Use only official government websites ending with .gov.in.",
+                        "li2": "Keep Aadhaar, Bank Passbook and ID proofs ready.",
+                        "li3": "Check spelling of your name and date of birth carefully.",
+                        "li4": "Save screenshots or photocopies after submission.",
+                        "li5": "Ask a trusted family member if you feel unsure."
+                    }
+                },
+                "div2": {
+                    "header": "Things You SHOULD NOT Do",
+                    "ul": {
+                        "li1": "Do not share OTP, PIN or bank details with anyone.",
+                        "li2": "Do not pay agents who promise quick approval.",
+                        "li3": "Do not click unknown links sent via SMS or WhatsApp.",
+                        "li4": "Do not fill forms on unofficial websites."
+                    }
+                },
+                "div3": {
+                    "header": "Important Things to Know",
+                    "ul": {
+                        "li1": "Most government services are free of cost.",
+                        "li2": "Approval may take time — delays are normal.",
+                        "li3": "Government never asks for money over phone calls.",
+                        "li4": "Always verify website address before entering details."
+                    }
+                },
+                "note": " If you feel confused at any step, stop and take help from a trusted person or visit a nearby government help center."
+            }
+        }
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "schemes": "Schemes",
+        "updates": "Updates",
+        "signup": "Sign Up",
+        "language": "Language"
+    },
+    "footer": {
+        "column1": {
+            "home": "Home",
+            "about": "About",
+            "schemes": "Schemes",
+            "updates": "Updates"
+        },
+        "column2": {
+            "link": {
+                "a1": "Government Schemes",
+                "a2": "Form Guidance",
+                "a3": "Notice Explainer",
+                "a4": "Scam Alert",
+                "a5": "Doc Updates",
+                "a6": "Help Center Locator"
+            }
+        },
+        "copyright": "© 2026 SevaSaathi. All rights reserved."
+    }
+}

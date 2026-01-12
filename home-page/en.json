@@ -1,0 +1,66 @@
+{
+    "nav": {
+    "home": "Home",
+    "about": "About",
+    "schemes": "Schemes",
+    "updates": "Updates",
+    "signup": "Sign Up",
+    "language": "Language"
+  },
+
+  "hero": {
+    "guide": "Guide",
+    "info": "Info",
+    "updates": "Updates",
+    "alert": "Alert",
+    "title": "Government Services, Made Simple",
+    "description": "Understand government schemes, forms, and notices in your native language — safely and easily.",
+    "cta": "Learn More",
+    "stats": {
+      "schemes": "Schemes",
+      "forms": "Forms",
+      "scams": "Scam Alerts"
+    }
+  },
+
+  "features": {
+    "header": "How SevaSaathi Helps You",
+    "subtitle": "Simple guidance • Safe access • Native language support",
+
+    "card1": {
+      "title": "Government Schemes",
+      "description": "We explain available government schemes and services in simple, plain language—no jargon, no confusion. Whether it's pension schemes, healthcare benefits, or financial assistance programs, we break down complex information into easy-to-understand steps so you can access what you're entitled to without any hassle.",
+      "cta": "More"
+    },
+
+    "card2": {
+      "title": "Form Guidance",
+      "description": "All guidance is available in Kannada and other regional languages for easy understanding. We provide step-by-step instructions on how to fill out government forms correctly, what documents you need, and where to submit them.",
+      "cta": "More"
+    },
+
+    "card3": {
+      "title": "Notice Explainer",
+      "description": "Learn how to identify fake messages and avoid government-related scams. We help you understand official government notices, distinguish them from fraudulent ones, and explain what actions you need to take.",
+      "cta": "More"
+    },
+
+    "card4": {
+      "title": "Scam Alert",
+      "description": "We only guide you and redirect to official government portals—no data collection. Stay safe from fraudsters who pose as government officials asking for money, OTPs, or personal information.",
+      "cta": "More"
+    },
+
+    "card5": {
+      "title": "Doc Updates",
+      "description": "We keep you informed about important document updates and renewals including Aadhaar, passport, ration card, and more.",
+      "cta": "More"
+    },
+
+    "card6": {
+      "title": "Help Center Locator",
+      "description": "Find the nearest government offices, Jan Seva Kendras, and authorized help centers in your area with accurate contact details and directions.",
+      "cta": "More"
+    }
+  }
+}
