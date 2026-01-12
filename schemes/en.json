@@ -13,6 +13,24 @@
             "header":"Farmers Schemes",
             "paragraph":"Financial support and subsidies for agriculture.",
             "link":"View More"
+        },
+        "card3":{
+            "header":"Women Schemes",
+            "paragraph":"Support for health, education, and small bussiness.",
+            "link":"View More"
+        },
+        "card4":{
+            "header":"Pension & Benefits",
+            "paragraph":"Monthly security for a dignified retired life.",
+            "link":"View More"
+        },
+        "nav":{
+            "home":"Home",
+            "about":"About",
+            "schemes":"Schemes",
+            "updates":"Updates",
+            "signup":"Sign Up",
+            "language":"Language"
         }
     }
 }
