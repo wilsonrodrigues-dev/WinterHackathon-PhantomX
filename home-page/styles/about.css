@@ -1,0 +1,155 @@
+:root {
+    --bg-cream: #FDFBED;
+    --teal-dark: #0D4D4D;
+    --teal-light: #186434;
+    --green-accent: #22C55E;
+    --white: #FFFFFF;
+    --crimson-light: #ce4848;
+    --darkselmon: darksalmon;
+    --crimson-extra-light: #FD8A6B;
+}
+
+/* About Section - Mobile First */
+.about {
+    padding: 2rem 1rem;
+    background-color: #FFFEF5;
+    margin: 2rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.about-content {
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.abcard {
+    position: relative;
+}
+
+.a-box {
+    width: 100%;
+    height: 420px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px 5px 5px 5px;
+    box-shadow: 0 0 5px 0;
+}
+
+.abcard .up {
+    color: white;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: var(--green-accent);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 10px 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contact {
+    position: relative;
+
+}
+
+.contact .a-box .up {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: rgb(62, 62, 62);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 10px 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.abcard2 {
+    position: relative;
+}
+
+.a-box {
+    position: relative;
+}
+
+.abcard2 .up {
+    color: white;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: var(--green-accent);
+    top: 0;
+    right: 0;
+    z-index: 2;
+    border-radius: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+
+
+    /* about section  */
+
+    .about {
+        padding: 3rem 2rem;
+        margin: 3rem 2rem;
+    }
+
+    .about h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-content {
+        font-size: 1.05rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 4rem 3rem;
+    }
+
+    .about h2 {
+        font-size: 2.8rem;
+    }
+
+    .about-content {
+        font-size: 1.1rem;
+        line-height: 2.1;
+    }
+
+    .a-box {
+        width: 100%;
+        height: 50%;
+    }
+}

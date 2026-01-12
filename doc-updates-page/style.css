@@ -34,7 +34,7 @@ body {
 
 main {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .hero {
@@ -43,10 +43,10 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem 3rem 1rem;
     background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
     color: var(--white);
-    font-family: 'GT';
+    font-family: 'pop';
 }
 
 .hero-icon i {
@@ -94,7 +94,7 @@ main {
     font-size: 2rem;
     color: var(--teal-dark);
     margin-bottom: 0.5rem;
-    font-family: 'GT';
+    font-family: 'pop';
 }
 
 .section-header p {
@@ -366,6 +366,9 @@ main {
     .hero {
         width: 100%;
         height: 50%;
+        justify-content: space-around;
+        gap: 1rem;
+        
     }
 
     .hero h1 {
