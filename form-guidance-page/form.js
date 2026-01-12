@@ -151,4 +151,12 @@ function openForm(i) {
     Steps are ${f.steps.join(", ")}.`
   );
 
+  categoryHint.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  // Highlight animation
+  categoryHint.classList.add("highlight");
+  setTimeout(() => categoryHint.classList.remove("highlight"), 1200);
 }
