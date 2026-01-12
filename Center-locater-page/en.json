@@ -1,0 +1,41 @@
+{
+    "controls": {
+        "button": "Use My Location",
+        "select": {
+            "value1": "Search by City",
+            "value2": "Bengaluru",
+            "value3": "Mysuru",
+            "value4": "Mangaluru",
+            "value5": "Hubballi",
+            "value6": "Belagavi",
+            "value7": "Shivamogga"
+        }
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "schemes": "Schemes",
+        "updates": "Updates",
+        "signup": "Sign Up",
+        "language": "Language"
+    },
+    "footer": {
+        "column1": {
+            "home": "Home",
+            "about": "About",
+            "schemes": "Schemes",
+            "updates": "Updates"
+        },
+        "column2": {
+            "link": {
+                "a1": "Government Schemes",
+                "a2": "Form Guidance",
+                "a3": "Notice Explainer",
+                "a4": "Scam Alert",
+                "a5": "Doc Updates",
+                "a6": "Help Center Locator"
+            }
+        },
+        "copyright": "© 2026 SevaSaathi. All rights reserved."
+    }
+}
