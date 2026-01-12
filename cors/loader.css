@@ -1,0 +1,37 @@
+#ss-loader {
+  position: fixed;
+  inset: 0;
+  background: #0f4c81;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.ss-loader-box {
+  text-align: center;
+  color: #fff;
+}
+
+.ss-spinner {
+  width: 52px;
+  height: 52px;
+  border: 6px solid rgba(255,255,255,0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: ss-spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+.ss-loading-text {
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  opacity: 0.9;
+}
+
+@keyframes ss-spin {
+  to {
+    transform: rotate(360deg);
+    background: url();
+  }
+}
