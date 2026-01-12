@@ -1,36 +1,61 @@
 {
-    "hero":{
-        "header":"Governmment Schemes",
-        "paragraph":"Empowering you with simple guidance and safe access."
+    "hero": {
+        "header": "Government Schemese",
+        "paragraph": "Empowering you with simple guidance and safe access."
     },
-    "categories":{
-        "card1":{
-            "header":"Senior Citizen",
-            "paragraph":"Healthcare, travel, and savings schemes for elders.",
-            "link":"View More"
+
+    "categories": {
+        "card1": {
+            "header": "Senior Citizen",
+            "paragraph": "Healthcare, travel, and savings schemes for elders.",
+            "link": "View More"
         },
-        "card2":{
-            "header":"Farmers Schemes",
-            "paragraph":"Financial support and subsidies for agriculture.",
-            "link":"View More"
+        "card2": {
+            "header": "Farmer Schemes",
+            "paragraph": "Financial support and subsidies for agriculture.",
+            "link": "View More"
         },
-        "card3":{
-            "header":"Women Schemes",
-            "paragraph":"Support for health, education, and small bussiness.",
-            "link":"View More"
+        "card3": {
+            "header": "Women Schemes",
+            "paragraph": "Support for health, education, and small business.",
+            "link": "View More"
         },
-        "card4":{
-            "header":"Pension & Benefits",
-            "paragraph":"Monthly security for a dignified retired life.",
-            "link":"View More"
-        },
-        "nav":{
-            "home":"Home",
-            "about":"About",
-            "schemes":"Schemes",
-            "updates":"Updates",
-            "signup":"Sign Up",
-            "language":"Language"
+        "card4": {
+            "header": "Pension & Benefits",
+            "paragraph": "Monthly security for a dignified retired life.",
+            "link": "View More"
         }
+    },
+    
+    "dynamicSection": {
+        "div": "Click a category above to view available schemes."
+    }
+    ,
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "schemes": "Schemes",
+        "updates": "Updates",
+        "signup": "Sign Up",
+        "language": "Language"
+    },
+    "footer": {
+        "column1": {
+            "home": "Home",
+            "about": "About",
+            "schemes": "Schemes",
+            "updates": "Updates"
+        },
+        "column2": {
+            "link": {
+                "a1": "Government Schemes",
+                "a2": "Form Guidance",
+                "a3": "Notice Explainer",
+                "a4": "Scam Alert",
+                "a5": "Doc Updates",
+                "a6": "Help Center Locator"
+            }
+        },
+        "copyright": "© 2026 SevaSaathi. All rights reserved."
     }
 }

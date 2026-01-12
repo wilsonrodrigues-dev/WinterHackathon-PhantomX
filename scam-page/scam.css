@@ -7,6 +7,13 @@
     --white: #FFFFFF;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
 @font-face {
     font-family: 'pop';
     src: url(../../fonts/Poppins-Regular.ttf);
@@ -17,29 +24,30 @@
     src: url(../../fonts/GreaterTheory.otf);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html,
 body {
     width: 100%;
     overflow-x: hidden;
-    font-family: 'pop';
 }
 
-.hero {
+body {
+    /* background-color: var(--bg-cream); */
+}
+
+/* --- Hero Carousel --- */
+.hero-carousel {
     margin-top: 70px;
     height: 30vh;
     overflow: hidden;
-    background-image: url(../images/heroscam.jpg);
+    background-image: url(../heroscam.jpg);
     background-size: cover;
     background-position: top;
+
+
+    /* background-color: var(--bg-cream); */
 }
 
-.container {
+.carousel-container {
     display: flex;
     justify-content: center;
     height: 100%;
@@ -48,21 +56,94 @@ body {
 
 }
 
-.container p {
+.carousel-container img {
+    width: 100%;
+}
+
+.carousel-container p {
     color: white;
     font-size: 13px;
     font-family: 'gt';
     font-weight: bolder;
 }
 
-.container div {
+.carousel-container div{
     margin-top: 1px;
     width: 90%;
     height: 17%;
     background-color: var(--warn-red);
     border-radius: 0 50px 50px 0;
-    border-left: 10px solid black;
+    border-left:10px solid black;
     padding: 10px;
+}
+
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    color: var(--teal-dark);
+}
+
+.slide img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.slide-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}
+
+.slide-content p {
+    /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); */
+}
+
+.slide-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 15px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+    width: 25px;
+    border-radius: 10px;
 }
 
 /* Warning Section */
@@ -268,18 +349,21 @@ body {
 
 /* Tablet Styles */
 @media (min-width: 768px) {
-    .container p {
-        font-size: 20px;
-    }
+    .carousel-container p {
+    font-size: 20px;
+}
 
-    .container div {
-        width: 70%;
-        height: 10%;
-        padding: 15px;
-    }
-
-    .hero {
+.carousel-container div{
+    width: 70%;
+    height: 10%;
+    padding: 15px;
+}
+    .hero-carousel {
         height: 600px;
+    }
+
+    .slide-content h1 {
+        font-size: 2.8rem;
     }
 
     .warning-grid {
@@ -317,21 +401,21 @@ body {
 /* Desktop Styles */
 @media (min-width: 1024px) {
 
-    .hero {
-        margin-top: 70px;
-        height: 100vh;
+    .hero-carousel {
+    margin-top: 70px;
+    height: 100vh;
     }
 
-    .container p {
-        font-size: 20px;
-    }
+    
+        .carousel-container p {
+    font-size: 20px;
+}
 
-    .container div {
-        width: 90%;
-        height: 12%;
-        padding: 10px;
-    }
-
+.carousel-container div{
+    width: 90%;
+    height: 12%;
+    padding: 10px;
+}
     .warning-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
@@ -354,7 +438,7 @@ body {
         font-size: 2.8rem;
     }
 
-    .container p {
+    .carousel-container p {
         font-size: 40px;
 
     }

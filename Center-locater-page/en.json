@@ -1,4 +1,5 @@
 {
+    "mainheader": "Get your Nearest government help center",
     "controls": {
         "button": "Use My Location",
         "select": {
@@ -10,7 +11,7 @@
             "value6": "Belagavi",
             "value7": "Shivamogga"
         }
-    },
+    }, 
     "nav": {
         "home": "Home",
         "about": "About",

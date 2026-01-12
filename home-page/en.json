@@ -85,7 +85,11 @@
     "serveTitle": "We Serve",
     "serve": "SevaSaathi serves as a trusted companion for senior citizens across India, offering information about pension schemes, healthcare benefits, and government services.",
     "contact": "Contact",
-    "phone": "phone:95814637620"
+    "header": "For inquiries, support, or feedback, reach out to us at:",
+    "email": "Sevasaathi@gmail.com",
+    "helpcenter-no":"0800-123-4567",
+    "address": "123 SevaSaathi Lane, Bengaluru, Karnataka, India"
+    
   },
 
   "faq": {

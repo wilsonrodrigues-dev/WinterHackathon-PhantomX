@@ -27,18 +27,22 @@ nav {
 }
 
 .logo-container{
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     width: 90px;
-    height: 60px;
+    height: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    margin-left: 50px;
+    gap: 5px;
+    color: white;
+
 }
 
 
 .logo-container img {
-    width: 100%;
+    width: 50%;
     object-fit: cover;
 }
 
@@ -253,8 +257,8 @@ nav {
     }
 
     .logo-container img {
-        height: 70px;
-        width: auto;
+        height: 40px;
+        /* width: auto; */
     }
 }
 
@@ -313,21 +317,21 @@ footer {
     height: 0;
     border-style: solid;
     border-width: 0 0 180px 180px;
-    border-color: transparent transparent #4CAF50 transparent;
+    border-color: transparent transparent #222222 transparent;
     z-index: 1;
 }
 
 /* Logo in Triangle */
 .footer-logo {
     position: absolute;
-    right: -20px;
+    right: -24px;
     bottom: 5px;
     z-index: 2;
     text-align: center;
 }
 
 .footer-logo-img {
-    width: 150px;
+    width: 110px;
     height: auto;
     object-fit: contain;
     /* margin-left: 200px; */
@@ -405,12 +409,12 @@ footer {
     }
 
     .footer-logo {
-        right: -8%;
-        bottom: -20%;
+        right: -11%;
+        bottom: 13%;
     }
 
     .footer-logo-img {
-        width: 80%;
+        width: 84%;
         height: auto;
     }
 

@@ -6,10 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="form.css" />
   <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../cors/loader.css">
   <title>Form Guidance Page</title>
 </head>
 
 <body>
+  <div id="ss-loader">
+    <div class="ss-loader-box">
+      <div class="ss-spinner"></div>
+      <p class="ss-loading-text">Loading Seva Sathi…</p>
+    </div>
+  </div>
   <nav>
     <div class="logo-container">
       <img src="../images/logostrok.png" alt="Logo">
@@ -22,22 +29,24 @@
     </div>
 
     <div class="nav-menu" id="sideNav">
-      <a href="../home-page/index.html">Home</a>
-      <a href="../home-page/index.html">About</a>
-      <a href="../schemes/index.html">Schemes</a>
-      <a href="../doc-updates-page/index.html">Updates</a>
+      <a href="../home-page/index.html" data-key="nav.home">Home</a>
+      <a href="../home-page/index.html" data-key="nav.about">About</a>
+      <a href="../schemes/index.html" data-key="nav.schemes">Schemes</a>
+      <a href="../doc-updates/index.html" data-key="nav.updates">Updates</a>
       <div class="lang-wrapper">
-        <button class="lang-btn" type="button">
-          <span>Language</span>
-          <span class="arrow">▾</span>
+        <button class="lang-btn" id="langBtn" type="button">
+          <span data-key="nav.language">Language</span>
+          <span>▾</span>
         </button>
 
-        <div class="lang-dropdown">
-          <button>English</button>
-          <button>ಕನ್ನಡ</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button type="button" data-lang="en"><a href="../home-page/index.html"
+              style="color: black;">English</a></button>
+          <button type="button" data-lang="kn"><a href="../home-page/index.html"
+              style="color: black;">ಕನ್ನಡ</a></button>
         </div>
       </div>
-
+      <!-- <button class="lang-btn" > <span data-key="nav.language">Language</span> <span>▾</span></button> -->
     </div>
   </nav>
   <section class="scheme-hero">
@@ -121,54 +130,118 @@
       </div>
     </section>
     <section class="apply-guidance-section">
-      <h2>🧭 Important Guidance Before Applying</h2>
-      <p class="section-subtitle">
+      <h2 data-key="main.section4.header">🧭 Important Guidance Before Applying</h2>
+      <p class="section-subtitle" data-key="main.section4.paragraph">
         Please read these points carefully before filling any government form.
       </p>
 
       <div class="guidance-list">
+
         <div class="guidance-block">
-          <h3>✅ Things You SHOULD Do</h3>
+          <h3 data-key="main.section4.guidance-list.div1.header">✅ Things You SHOULD Do</h3>
           <ul>
-            <li>
-              🧾 Use only official government websites ending with
+            <li data-key="main.section4.guidance-list.div1.ul.li1">🧾 Use only official government websites ending with
               <strong>.gov.in</strong>
             </li>
-            <li>📂 Keep Aadhaar, Bank Passbook and ID proofs ready</li>
-            <li>
-              ✍️ Check spelling of your name and date of birth carefully
+            <li data-key="main.section4.guidance-list.div1.ul.li2">📂 Keep Aadhaar, Bank Passbook and ID proofs ready
             </li>
-            <li>📸 Save screenshots or photocopies after submission</li>
-            <li>👨‍👩‍👧 Ask a trusted family member if you feel unsure</li>
+            <li data-key="main.section4.guidance-list.div1.ul.li3">✍️ Check spelling of your name and date of birth
+              carefully</li>
+            <li data-key="main.section4.guidance-list.div1.ul.li4">📸 Save screenshots or photocopies after submission
+            </li>
+            <li data-key="main.section4.guidance-list.div1.ul.li5">👨‍👩‍👧 Ask a trusted family member if you feel
+              unsure</li>
           </ul>
         </div>
 
         <div class="guidance-block">
-          <h3>❌ Things You SHOULD NOT Do</h3>
+          <h3 data-key="main.section4.guidance-list.div2.header">❌ Things You SHOULD NOT Do</h3>
           <ul>
-            <li>🔐 Do not share OTP, PIN or bank details with anyone</li>
-            <li>💸 Do not pay agents who promise quick approval</li>
-            <li>📵 Do not click unknown links sent via SMS or WhatsApp</li>
-            <li>🌐 Do not fill forms on unofficial websites</li>
+            <li data-key="main.section4.guidance-list.div2.ul.li1">🔐 Do not share OTP, PIN or bank details with anyone
+            </li>
+            <li data-key="main.section4.guidance-list.div2.ul.li2">💸 Do not pay agents who promise quick approval</li>
+            <li data-key="main.section4.guidance-list.div2.ul.li3">📵 Do not click unknown links sent via SMS or
+              WhatsApp</li>
+            <li data-key="main.section4.guidance-list.div2.ul.li4">🌐 Do not fill forms on unofficial websites</li>
           </ul>
         </div>
 
-          <div class="guidance-block">
-            <h3>ℹ️ Important Things to Know</h3>
-            <ul>
-              <li>🆓 Most government services are free of cost</li>
-              <li>⏳ Approval may take time — delays are normal</li>
-              <li>📞 Government never asks for money over phone calls</li>
-              <li>🔍 Always verify website address before entering details</li>
-            </ul>
-          </div>
+        <div class="guidance-block">
+          <h3 data-key="main.section4.guidance-list.div3.header">ℹ️ Important Things to Know</h3>
+          <ul>
+            <li data-key="main.section4.guidance-list.div3.ul.li1">🆓 Most government services are free of cost</li>
+            <li data-key="main.section4.guidance-list.div3.ul.li2">⏳ Approval may take time — delays are normal</li>
+            <li data-key="main.section4.guidance-list.div3.ul.li3">📞 Government never asks for money over phone calls
+            </li>
+            <li data-key="main.section4.guidance-list.div3.ul.li4">🔍 Always verify website address before entering
+              details</li>
+          </ul>
         </div>
-        <div class="help-note">
-          📌 If you feel confused at any step, stop and take help from a trusted
-          person or visit a nearby government help center.
+
+      </div>
+
+      <div class="help-note" data-key="main.section4.guidance-list.note">
+        📌 If you feel confused at any step, stop and take help from a trusted person or visit a nearby government help
+        center.
+      </div>
+
+
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links-container">
+        <!-- Column 1 -->
+        <div class="footer-column">
+          <ul>
+            <a href="../home-page/index.html" data-key="footer.Column1.home">Home</a>
+            <a href="../home-page/index.html" data-key="footer.Column1.about">About</a>
+            <a href="../schemes/index.html" data-key="footer.Column1.schemes">Schemes</a>
+            <a href="../doc-updates/index.html" data-key="footer.Column1.updates">Updates</a>
+          </ul>
         </div>
-      </section>
-    </main>
-    <script src="form.js"></script>
-  </body>
+
+        <!-- Column 2 -->
+        <div class="footer-column">
+          <ul>
+            <li><a href="../schemes/index.html" data-key="footer.Column2.links.a1">Government Schemes</a></li>
+            <li><a href="../form-page/index.html" data-key="footer.Column2.links.a2">Form Guidance</a></li>
+            <li><a href="../notice explainer/index.html" data-key="footer.Column2.links.a3">Notice Explainer</a></li>
+            <li><a href="../scam-page/index.html" data-key="footer.Column2.links.a4">Scam Alert</a></li>
+            <li><a href="../doc-updates/index.html" data-key="footer.Column2.links.a5">Doc Updates</a></li>
+            <li><a href="../location feature/helpcenter.html" data-key="footer.Column2.links.a6">Help Center Locator</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <!-- <p class="footer-disclaimer">
+                    We only provide guidance. All submissions happen on official government portals.
+                </p> -->
+        <p class="footer-copyright" data-key="footer.copyright">
+          © 2026 SevaSaathi. All rights reserved.
+        </p>
+      </div>
+    </div>
+
+    <!-- Diagonal Green Triangle -->
+    <div class="footer-triangle"></div>
+
+    <!-- Logo in Triangle -->
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="SevaSaathi Logo" class="footer-logo-img">
+    </div>
+  </footer>
+  <script src="../cors/language-dropdown.js"></script>
+  <script src="../cors/loader.js"></script>
+  <script src="../cors/language-guard.js"></script>
+  <script src="../cors/content-loader.js"></script>
+  <script src="form.js"></script>
+  <script src="script.js"></script>
+  <script src="../home-page/script.js"></script>
+</body>
+</body>
+
 </html>

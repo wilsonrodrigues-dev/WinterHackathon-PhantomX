@@ -12,6 +12,7 @@ function hideLoader() {
   }, 300);
 }
 
+/* Hide loader after full page load */
 window.addEventListener("load", () => {
   hideLoader();
 });

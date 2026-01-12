@@ -7,14 +7,60 @@
     <title>Help Center Locater</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../global.css">
 </head>
 
 <body>
+    <div id="ss-loader">
+        <div class="ss-bg"></div>
+
+        <div class="ss-loader-box">
+            <div class="ss-spinner">
+                <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="ss-loading-text">Loading…</div>
+        </div>
+    </div>
+
+
+    <nav>
+        <div class="logo-container">
+            <img src="../images/logostrok.png" alt="Logo" />
+        </div>
+
+        <div class="ham-btn" id="menuToggle" aria-label="Toggle menu" role="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-menu" id="sideNav">
+             <a href="#" data-key="nav.home">Home</a>
+            <a href="#about" data-key="nav.about">About</a>
+            <a href="../schemes/index.html" data-key="nav.schemes">Schemes</a>
+            <a href="../doc-updates/index.html" data-key="nav.updates">Updates</a>
+            <a href="#log-in"><button class="signup-btn" data-key="nav.signup">Sign Up</button></a>
+            <!-- <button class="lang-btn"> <span data-key="nav.language">Language </span><span>▾</span></button> -->
+            <div class="lang-wrapper">
+                <button class="lang-btn" id="langBtn" type="button">
+                    <span data-key="nav.language">Language</span>
+                    <span>▾</span>
+                </button>
+
+                <div class="lang-dropdown" id="langDropdown">
+                    <button type="button" data-lang="en"><a href="../home-page/index.html"
+                            style="color: black;">English</a></button>
+                    <button type="button" data-lang="kn"><a href="../home-page/index.html"
+                            style="color: black;">ಕನ್ನಡ</a></button>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="background"></div>
 
     <main>
         <div class="header">
-            <h2><i class="ri-user-location-line"></i> Get your Nearest government help center <i
+            <h2><i class="ri-user-location-line" data-key="mainheader"></i> Get your Nearest government help center <i
                     class="ri-map-2-fill"></i></h2>
         </div>
         <div class="controls">
@@ -157,6 +203,13 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgu9ThTU02IqywYz489aYzN_j2utn1q1o&libraries=places&callback=initMap"
         async defer>
         </script>
+        <script src="../cors/language-dropdown.js"></script>
+    <script src="../cors/loader.js"></script>
+  <script src="../cors/language-guard.js"></script>
+  <script src="../cors/content-loader.js"></script>
+  <script src="../home-page/script.js"></script>
+
+
 </body>
 
 </html>

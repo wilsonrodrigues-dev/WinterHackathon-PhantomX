@@ -28,10 +28,10 @@
     </div>
   </div>
 
-
   <nav>
     <div class="logo-container">
-      <img src="../images/logostrok.png" alt="Logo" />
+      <img src="../images/logo.png" alt="Logo">
+      <h2>SevaSaathi</h2>
     </div>
 
     <div class="ham-btn" id="menuToggle" aria-label="Toggle menu" role="button">
@@ -41,11 +41,11 @@
     </div>
 
     <div class="nav-menu" id="sideNav">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="../schemes/index.html">Schemes</a>
-      <a href="../doc-updates-page/index.html">Updates</a>
-      <a href="#login-page"><button class="signup-btn">Sign Up</button></a>
+      <a href="#" data-key="nav.home">Home</a>
+      <a href="#about" data-key="nav.about">About</a>
+      <a href="../schemes/index.html" data-key="nav.schemes">Schemes</a>
+      <a href="../doc-updates/index.html" data-key="nav.updates">Updates</a>
+      <a href="#log-in"><button class="signup-btn" data-key="nav.signup">Sign Up</button></a>
       <!-- <button class="lang-btn"> <span data-key="nav.language">Language </span><span>▾</span></button> -->
       <div class="lang-wrapper">
         <button class="lang-btn" id="langBtn" type="button">
@@ -60,8 +60,12 @@
               style="color: black;">ಕನ್ನಡ</a></button>
         </div>
       </div>
+
+
     </div>
   </nav>
+
+
 
   <div class="nav-overlay" id="navOverlay"></div>
 
@@ -76,25 +80,25 @@
       <div class="info hd1">
         <div>
           <i class="ri-file-edit-fill"></i>
-          <h3>Guide</h3>
+          <h3 data-key="hero.guide">Guide</h3>
         </div>
       </div>
       <div class="info hd2">
         <div>
           <i class="ri-information-fill"></i>
-          <h3>Info</h3>
+          <h3 data-key="hero.info">Info</h3>
         </div>
       </div>
       <div class="info hd3">
         <div>
           <i class="ri-notification-2-fill"></i>
-          <h3 class="up">Updates</h3>
+          <h3 class="up" data-key="hero.updates">Updates</h3>
         </div>
       </div>
       <div class="info hd4">
         <div>
           <i class="ri-error-warning-fill"></i>
-          <h3>Alert</h3>
+          <h3 data-key="hero.alert">Alert</h3>
         </div>
       </div>
     </div>
@@ -102,37 +106,37 @@
     <!-- TEXT SIDE -->
     <div class="hero-text">
       <div class="top">
-        <h1>Government Services,<br />Made Simple</h1>
-        <p>
+        <h1 data-key="hero.title">Government Services,<br />Made Simple</h1>
+        <p data-key="hero.description">
           Understand government schemes, forms, and notices in your native
           language — safely and easily.
         </p>
-        <button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+        <button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})" data-key="hero.cta">
           Learn More
         </button>
       </div>
       <div class="down">
         <div class="noschemes">
           <h2 class="count" data-target="200">0</h2>
-          <h3>Schemes</h3>
+          <h3 data-key="hero.stats.schemes">Schemes</h3>
         </div>
 
         <div class="noforms">
           <h2 class="count" data-target="100">0</h2>
-          <h3>Forms</h3>
+          <h3 data-key="hero.stats.forms">Forms</h3>
         </div>
 
         <div class="scamsupdates">
           <h2 class="count" data-target="300">0</h2>
-          <h3>Scam Alerts</h3>
+          <h3 data-key="hero.stats.scams">Scam Alerts</h3>
         </div>
       </div>
     </div>
   </section>
   <section class="features" id="features">
     <div class="features-header">
-      <h2>How SevaSaathi Helps You</h2>
-      <p class="features-subtitle">
+      <h2 data-key="features.header">How SevaSaathi Helps You</h2>
+      <p class="features-subtitle" data-key="features.subtitle">
         Simple guidance • Safe access • Native language support
       </p>
     </div>
@@ -145,17 +149,15 @@
           <div class="circle"><span class="feature-icon">📋</span></div>
         </div>
 
-        <h3>Government Schemes</h3>
-        <p>
-          We explain available government schemes and services in simple,
-          plain language—no jargon, no confusion. Whether it's pension
-          schemes, healthcare benefits, or financial assistance programs, we
-          break down complex information into easy-to-understand steps so you
-          can access what you're entitled to without any hassle.
-        </p>
+        <h3 data-key="features.card1.title">Government Schemes</h3>
+        <p data-key="features.card1.description">We explain available government schemes and services in simple,
+          plain language—no jargon, no
+          confusion. Whether it's pension schemes, healthcare benefits, or financial assistance programs, we
+          break down complex information into easy-to-understand steps so you can access what you're entitled
+          to without any hassle.</p>
 
         <div class="designbot"></div>
-        <button class="more-btn">
+        <button class="more-btn" data-key="features.card1.cta">
           <a href="../schemes/index.html">More</a>
         </button>
       </div>
@@ -166,19 +168,16 @@
           <div class="circle"><span class="feature-icon">📝</span></div>
         </div>
 
-        <h3>Form Guidance</h3>
-        <p>
-          All guidance is available in Kannada and other regional languages
-          for easy understanding. We provide step-by-step instructions on how
-          to fill out government forms correctly, what documents you need, and
-          where to submit them. No more confusion about complicated
-          application processes—we make it simple and clear in your native
-          language.
-        </p>
+       <h3 data-key="features.card2.title">Form Guidance</h3>
+                <p data-key="features.card2.description">All guidance is available in Kannada and other regional
+                    languages for easy understanding. We provide
+                    step-by-step instructions on how to fill out government forms correctly, what documents you need,
+                    and where to submit them. No more confusion about complicated application processes—we make it
+                    simple and clear in your native language.</p>
         <div class="designtop"></div>
         <div class="designbot"></div>
         <button class="more-btn">
-          <a href="../form-guidance-page/index.html">More</a>
+          <a href="../form-guidance-page/index.html" data-key="features.card2.cta">More</a>
         </button>
       </div>
 
@@ -188,18 +187,16 @@
           <div class="circle"><span class="feature-icon">🔔</span></div>
         </div>
 
-        <h3>Notice Explainer</h3>
-        <p>
-          Learn how to identify fake messages and avoid government-related
-          scams. We help you understand official government notices,
-          distinguish them from fraudulent ones, and explain what actions you
-          need to take. Stay informed about important updates and deadlines
-          without falling victim to scammers who target senior citizens.
-        </p>
+        <h3 data-key="features.card3.title">Notice Explainer</h3>
+                <p data-key="features.card3.description">Learn how to identify fake messages and avoid
+                    government-related scams. We help you understand official government notices, distinguish them from
+                    fraudulent ones, and explain what actions you need to take. Stay informed about important updates
+                    and deadlines without falling victim to scammers who target senior citizens.</p>
+                <div class="designtop"></div>
         <div class="designtop"></div>
         <div class="designbot"></div>
         <button class="more-btn">
-          <a href="../notice explainer/index.html">More</a>
+          <a href="../notice explainer/index.html" data-key="features.card3.cta">More</a>
         </button>
       </div>
 
@@ -208,18 +205,15 @@
         <div class="upbox">
           <div class="circle"><span class="feature-icon">⚠️</span></div>
         </div>
-        <h3>Scam Alert</h3>
-        <p>
-          We only guide you and redirect to official government portals—no
-          data collection. Stay safe from fraudsters who pose as government
-          officials asking for money, OTPs, or personal information. We
-          provide real-time alerts about common scams targeting seniors and
-          teach you how to verify genuine government communications.
-        </p>
+         <h3 data-key="features.card4.title">Scam Alert</h3>
+                <p data-key="features.card4.description">We only guide you and redirect to official government
+                    portals—no data collection. Stay safe from fraudsters who pose as government officials asking for
+                    money, OTPs, or personal information. We provide real-time alerts about common scams targeting
+                    seniors and teach you how to verify genuine government communications.</p>
         <div class="designtop"></div>
         <div class="designbot"></div>
         <button class="more-btn">
-          <a href="../scam-page/index.html">More</a>
+          <a href="../scam-page/index.html" data-key="features.card4.cta">More</a>
         </button>
       </div>
 
@@ -228,18 +222,15 @@
         <div class="upbox">
           <div class="circle"><span class="feature-icon">📄</span></div>
         </div>
-        <h3>Doc Updates</h3>
-        <p>
-          We keep you informed about important document updates and renewals.
-          Get timely reminders about Aadhaar updates, passport renewals,
-          ration card modifications, and other essential documentation. We
-          explain what changes are needed, why they're important, and guide
-          you through the update process step-by-step.
-        </p>
+       <h3 data-key="features.card5.title">Doc Updates</h3>
+                <p data-key="features.card5.description">We keep you informed about important document updates and
+                    renewals. Get timely reminders about Aadhaar updates, passport renewals, ration card modifications,
+                    and other essential documentation. We explain what changes are needed, why they're important, and
+                    guide you through the update process step-by-step.</p>
         <div class="designtop"></div>
         <div class="designbot"></div>
         <button class="more-btn">
-          <a href="../doc-updates-page/index.html">More</a>
+          <a href="../doc-updates-page/index.html" data-key="features.card5.cta">More</a>
         </button>
       </div>
 
@@ -248,14 +239,11 @@
         <div class="upbox">
           <div class="circle"><span class="feature-icon">📍</span></div>
         </div>
-        <h3>Help Center Locator</h3>
-        <p>
-          Find the nearest government offices, Jan Seva Kendras, and
-          authorized help centers in your area. We provide accurate locations,
-          contact numbers, working hours, and directions so you can get
-          in-person assistance when needed. No more wandering around—find the
-          right place to get help quickly and easily.
-        </p>
+        <h3 data-key="features.card6.title">Help Center Locator</h3>
+                <p data-key="features.card6.description">Find the nearest government offices, Jan Seva Kendras, and
+                    authorized help centers in your area. We provide accurate locations, contact numbers, working hours,
+                    and directions so you can get in-person assistance when needed. No more wandering around—find the
+                    right place to get help quickly and easily.</p>
         <div class="designtop"></div>
         <div class="designbot"></div>
         <button class="more-btn">
@@ -316,7 +304,10 @@
             <h3 data-key="about.contact">Contact</h3>
           </div>
           <div>
-            <h4 data-key="about.phone">Phone: 95814637620</h4>
+            <h4 data-key="about.header">For inquiries, support, or feedback, reach out to us at:</h4>
+            <h5 data-key="about.email">"Sevasaathi@gmail.com"</h5>
+            <h5 data-key="about.helpcenter-no">"0800-123-4567"</h5>
+            <h5 data-key="about.address">"123 SevaSaathi Lane, Bengaluru, Karnataka, India"</h5>
           </div>
         </div>
       </div>
@@ -325,8 +316,8 @@
 
   <section class="login-page" id="login-page">
     <div class="hero-left">
-      <h1>SevaSaathi</h1>
-      <p>
+      <h1 data-key="login.title">SevaSaathi</h1>
+      <p data-key="login.subtitle">
         India’s trusted platform for scam alerts, fraud warnings, and digital
         safety.
       </p>
@@ -337,24 +328,24 @@
     </div>
     <div class="hero-right">
       <div class="login-card">
-        <h1>Welcome to SevaSaathi</h1>
+        <h1 data-key="login.signin">Welcome to SevaSaathi</h1>
         <input type="email" id="email" placeholder="Email address" />
         <input type="password" id="password" placeholder="Password" />
         <input type="tel" name="phone" id="phone" placeholder="Enter Phone Number to get Timely SMS(Optional)" />
 
-        <button class="primary-btn" id="loginBtn">Sign in with Email</button>
+        <button class="primary-btn" id="loginBtn" data-key="login.signin">Sign in with Email</button>
 
-        <button class="secondary-btn" id="signupBtn">
+        <button class="secondary-btn" id="signupBtn" data-key="login.signup">
           Create New Account
         </button>
 
         <div class="divider">OR</div>
 
-        <button class="google-btn" id="googleBtn">
+        <button class="google-btn" id="googleBtn"  data-key="login.google">
           Continue with Google
         </button>
 
-        <p class="login-note">We never ask for OTP, PIN, or bank details.</p>
+        <p class="login-note" data-key="login.note">We never ask for OTP, PIN, or bank details.</p>
 
         <p id="error" class="error-text"></p>
         <p id="success" class="success-text"></p>
@@ -446,63 +437,60 @@
 
   <!-- Footer Section -->
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-links-container">
-        <!-- Column 1 -->
-        <div class="footer-column">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="../schemes/index.html">Schemes</a></li>
-            <li><a href="../doc-updates-page/index.html">Updates</a></li>
-          </ul>
-        </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links-container">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="../scam-page/index.html">Schemes</a></li>
+                        <li><a href="../doc-updates/index.html">Updates</a></li>
+                    </ul>
+                </div>
 
-        <!-- Column 2 -->
-        <div class="footer-column">
-          <ul>
-            <li><a href="../schemes/index.html">Government Schemes</a></li>
-            <li>
-              <a href="../form-guidance-page/index.html">Form Guidance</a>
-            </li>
-            <li>
-              <a href="../notice-explainer/index.html">Notice Explainer</a>
-            </li>
-            <li><a href="../scam-page/index.html">Scam Alert</a></li>
-            <li><a href="../doc-updates-page/index.html">Doc Updates</a></li>
-            <li>
-              <a href="../location feature/helpcenter.html">Help Center Locator</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="../schemes/index.html" data-key="footer.Column2.links.a1">Government Schemes</a>
+                        </li>
+                        <li><a href="../form-page/index.html" data-key="footer.Column2.links.a2">Form Guidance</a></li>
+                        <li><a href="../notice explainer/index.html" data-key="footer.Column2.links.a3">Notice
+                                Explainer</a></li>
+                        <li><a href="../scam-page/index.html" data-key="footer.Column2.links.a4">Scam Alert</a></li>
+                        <li><a href="../doc-updates/index.html" data-key="footer.Column2.links.a5">Doc Updates</a></li>
+                        <li><a href="../location feature/helpcenter.html" data-key="footer.Column2.links.a6">Help Center
+                                Locator</a></li>
+                    </ul>
+                </div>
+            </div>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <!-- <p class="footer-disclaimer">
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <!-- <p class="footer-disclaimer">
                     We only provide guidance. All submissions happen on official government portals.
                 </p> -->
-        <p class="footer-copyright">
-          © 2026 SevaSaathi. All rights reserved.
-        </p>
-      </div>
-    </div>
+                <p class="footer-copyright" data-key="footer.copyright">
+                    © 2026 SevaSaathi. All rights reserved.
+                </p>
+            </div>
+        </div>
 
-    <!-- Diagonal Green Triangle -->
-    <div class="footer-triangle"></div>
+        <!-- Diagonal Green Triangle -->
+        <div class="footer-triangle"></div>
 
-    <!-- Logo in Triangle -->
-    <div class="footer-logo">
-      <img src="../images/logo.png" alt="SevaSaathi Logo" class="footer-logo-img" />
-    </div>
-  </footer>
-      <script src="../cors/loader.js"></script>
-    <script src="../cors/language-guard.js"></script>
-    <script src="../cors/content-loader.js"></script>
-    <script src="../cors/language-dropdown.js"></script>
-    <script type="module" src="script.js"></script>
-    <script type="module" src="login.js"></script>
+        <!-- Logo in Triangle -->
+        <div class="footer-logo">
+            <img src="../images/logo.png" alt="SevaSaathi Logo" class="footer-logo-img">
+        </div>
+    </footer>
+  <script src="../cors/loader.js"></script>
+  <script src="../cors/language-guard.js"></script>
+  <script src="../cors/content-loader.js"></script>
+  <script src="../cors/language-dropdown.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="login.js"></script>
 </body>
 
 </html>

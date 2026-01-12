@@ -1,4 +1,4 @@
-// if the language is already in localstorage then skip this page
+// If language already selected, skip this page
 (function () {
   const lang = localStorage.getItem("seva_lang");
   if (lang) {
@@ -7,7 +7,7 @@
   }
 })();
 
-//this function is called when the user select the language
+// Called when user clicks a language
 function selectLanguage(lang) {
   showLoader();
 

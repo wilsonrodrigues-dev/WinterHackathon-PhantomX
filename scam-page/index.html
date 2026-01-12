@@ -7,9 +7,19 @@
     <title>Sacm Page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="../cors/loader.css">
+    <link rel="stylesheet" href="scam.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
+    <!-- GLOBAL LOADER -->
+    <div id="ss-loader">
+        <div class="ss-loader-box">
+            <div class="ss-spinner"></div>
+            <p class="ss-loading-text">Loading Seva Sathi…</p>
+        </div>
+    </div>
     <nav>
         <div class="logo-container">
             <img src="../images/logostrok.png" alt="Logo">
@@ -22,22 +32,24 @@
         </div>
 
         <div class="nav-menu" id="sideNav">
-            <a href="../home-page/index.html">Home</a>
-            <a href="../home-page/index.html">About</a>
-            <a href="../schemes/index.html">Schemes</a>
-            <a href="../doc-updates-page/index.html">Updates</a>
-            <div class="lang-wrapper">
-                <button class="lang-btn" type="button">
-                    <span>Language</span>
-                    <span class="arrow">▾</span>
-                </button>
+            <a href="../home-page/index.html" data-key="nav.home">Home</a>
+            <a href="../home-page/index.html" data-key="nav.about">About</a>
+            <a href="../schemes/index.html" data-key="nav.schemes">Schemes</a>
+            <a href="../doc-updates/index.html"  data-key="nav.updates">Updates</a>
+            <!-- <button class="lang-btn" ><span data-key="nav.language">Language</span> <span>▾</span></button> -->
+         <div class="lang-wrapper">
+        <button class="lang-btn" id="langBtn" type="button">
+          <span data-key="nav.language">Language</span>
+          <span>▾</span>
+        </button>
 
-                <div class="lang-dropdown">
-                    <button>English</button>
-                    <button>ಕನ್ನಡ</button>
-                </div>
-            </div>
-
+        <div class="lang-dropdown" id="langDropdown">
+          <button type="button" data-lang="en"><a href="../home-page/index.html"
+              style="color: black;">English</a></button>
+          <button type="button" data-lang="kn"><a href="../home-page/index.html"
+              style="color: black;">ಕನ್ನಡ</a></button>
+        </div>
+      </div>
         </div>
     </nav>
 
@@ -49,63 +61,79 @@
         </div>
     </section>
 
-    <section class="warning-section">
-        <h2 class="section-title">Common Red Flags & New Scams</h2>
+   <section class="warning-section">
+        <h2 class="section-title" data-key="warning-section.header">Common Red Flags & New Scams</h2>
         <div class="warning-grid">
             <div class="scam-behind">
                 <div class="scam-card dark-red">
                     <span class="scam-icon">⚖️</span>
-                    <div class="scam-tag">URGENT</div>
-                    <h3>Digital Arrest</h3>
-                    <p>Scammers pose as Police or CBI on video calls, saying you are "arrested" and must stay on camera
-                        for hours. <strong>Fact:</strong> Police never arrest anyone over video call.</p>
+                    <div class="scam-tag" data-key="warning-section.warning-grid1.scam-card1.div">URGENT</div>
+                    <h3 data-key="warning-section.warning-grid1.scam-card1.header">Digital Arrest</h3>
+                    <p data-key="warning-section.warning-grid1.scam-card1.paragraph">Scammers pose as Police or CBI on
+                        video calls, saying you are "arrested" and must stay on camera
+                        for
+                        hours. <strong>Fact:</strong> Police never arrest anyone over video call.</p>
                 </div>
             </div>
+
 
             <div class="scam-behind">
                 <div class="scam-card purple">
                     <span class="scam-icon">👤</span>
-                    <div class="scam-tag">NEW AI SCAM</div>
-                    <h3>AI Voice Cloning</h3>
-                    <p>You might get a call that sounds 100% like your grandchild crying for help. Scammers use AI to
-                        copy their voice. <strong>Tip:</strong> Always call them back on their real number first.</p>
+                    <div class="scam-tag" data-key="warning-section.warning-grid1.scam-card2.div">NEW AI SCAM</div>
+                    <h3 data-key="warning-section.warning-grid1.scam-card2.header">AI Voice Cloning</h3>
+                    <p data-key="warning-section.warning-grid1.scam-card2.paragraph">You might get a call that sounds
+                        100% like your grandchild crying for help. Scammers use AI to
+                        copy
+                        their voice. <strong>Tip:</strong> Always call them back on their real number first.</p>
                 </div>
             </div>
+
 
             <div class="scam-behind">
                 <div class="scam-card amber">
                     <span class="scam-icon">💡</span>
-                    <h3>Electricity Bill Trap</h3>
-                    <p>An SMS says "Your power will be cut tonight at 9 PM due to unpaid bills." It asks you to call a
+                    <h3 data-key="warning-section.warning-grid1.scam-card3.header">Electricity Bill Trap</h3>
+                    <p data-key="warning-section.warning-grid1.scam-card3.paragraph">An SMS says "Your power will be cut
+                        tonight at 9 PM due to unpaid bills." It asks you to call a
                         number. <strong>Reality:</strong> Real bill departments never send personal phone numbers in
-                        SMS.</p>
+                        SMS.
+                    </p>
                 </div>
             </div>
+
 
             <div class="scam-behind">
                 <div class="scam-card red">
                     <span class="scam-icon">📞</span>
-                    <h3>The Fake Bank Call</h3>
-                    <p>Claims your ATM card is blocked and asks for an OTP. Real banks will <strong>never</strong> ask
-                        for your OTP or PIN over the phone.</p>
+                    <h3 data-key="warning-section.warning-grid1.scam-card4.header">The Fake Bank Call</h3>
+                    <p data-key="warning-section.warning-grid1.scam-card4.paragraph">Claims your ATM card is blocked and
+                        asks for an OTP. Real banks will <strong>never</strong> ask
+                        for
+                        your OTP or PIN over the phone.</p>
                 </div>
             </div>
 
             <div class="scam-behind">
                 <div class="scam-card blue">
                     <span class="scam-icon">📦</span>
-                    <h3>Fake Parcel Scams</h3>
-                    <p>Someone says a parcel in your name contains "illegal items" and you must pay to clear it. Just
-                        hang up—it's a scam to scare you.</p>
+                    <h3 data-key="warning-section.warning-grid1.scam-card5.header">Fake Parcel Scams</h3>
+                    <p data-key="warning-section.warning-grid1.scam-card5.paragraph">Someone says a parcel in your name
+                        contains "illegal items" and you must pay to clear it. Just
+                        hang
+                        up—it's a scam to scare you.</p>
                 </div>
             </div>
+
 
             <div class="scam-behind">
                 <div class="scam-card green">
                     <span class="scam-icon">💰</span>
-                    <h3>KBC / Lottery Fraud</h3>
-                    <p>WhatsApp messages saying you've won ₹25 Lakhs. They ask for a small "processing fee" first. Once
-                        you pay, they disappear.</p>
+                    <h3 data-key="warning-section.warning-grid1.scam-card6.header">KBC / Lottery Fraud</h3>
+                    <p data-key="warning-section.warning-grid1.scam-card6.paragraph">WhatsApp messages saying you've won
+                        ₹25 Lakhs. They ask for a small "processing fee" first. Once
+                        you
+                        pay, they disappear.</p>
                 </div>
             </div>
         </div>
@@ -113,44 +141,49 @@
 
     <section class="report-section">
         <div class="report-container">
-            <h2>Think you've been targeted?</h2>
-            <p>Don't wait. Call the National Cybercrime Helpline immediately.</p>
-            <a href="tel:1930" class="panic-btn">📞 Call 1930 Now</a>
-            <p class="sub-text">Available 24/7 across India</p>
+            <h2 data-key="report-section.header">Think you've been targeted?</h2>
+            <p data-key="report-section.paragraph">Don't wait. Call the National Cybercrime Helpline immediately.</p>
+            <a href="tel:1930" class="panic-btn" data-key="report-section.link">📞 Call 1930 Now</a>
+            <p class="sub-text" data-key="report-section.note">Available 24/7 across India</p>
         </div>
     </section>
 
-    <!-- Footer Section -->
-
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-links-container">
                 <!-- Column 1 -->
                 <div class="footer-column">
                     <ul>
-                        <li><a href="../home-page/index.html">Home</a></li>
-                        <li><a href="../home-page/index.html">About</a></li>
-                        <li><a href="../schemes/index.html">Schemes</a></li>
-                        <li><a href="../doc-updates-page/index.html">Updates</a></li>
+                        <a href="../home-page/index.html" data-key="footer.Column1.home">Home</a>
+                        <a href="../home-page/index.html" data-key="footer.Column1.about">About</a>
+                        <a href="../schemes/index.html" data-key="footer.Column1.schemes">Schemes</a>
+                        <a href="../doc-updates/index.html" data-key="footer.Column1.updates">Updates</a>
                     </ul>
                 </div>
 
                 <!-- Column 2 -->
                 <div class="footer-column">
                     <ul>
-                        <li><a href="../schemes/index.html">Government Schemes</a></li>
-                        <li><a href="../form-guidance-page/index.html">Form Guidance</a></li>
-                        <li><a href="../notice-explainer/index.html">Notice Explainer</a></li>
-                        <li><a href="../scam-page/index.html">Scam Alert</a></li>
-                        <li><a href="../doc-updates-page/index.html">Doc Updates</a></li>
-                        <li><a href="../location feature/helpcenter.html">Help Center Locator</a></li>
+                        <li><a href="../schemes/index.html" data-key="footer.Column2.links.a1">Government Schemes</a>
+                        </li>
+                        <li><a href="../form-page/index.html" data-key="footer.Column2.links.a2">Form Guidance</a></li>
+                        <li><a href="../notice explainer/index.html" data-key="footer.Column2.links.a3">Notice
+                                Explainer</a></li>
+                        <li><a href="../scam-page/index.html" data-key="footer.Column2.links.a4">Scam Alert</a></li>
+                        <li><a href="../doc-updates/index.html" data-key="footer.Column2.links.a5">Doc Updates</a></li>
+                        <li><a href="../location feature/helpcenter.html" data-key="footer.Column2.links.a6">Help Center
+                                Locator</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="footer-copyright">
+                <!-- <p class="footer-disclaimer">
+                    We only provide guidance. All submissions happen on official government portals.
+                </p> -->
+                <p class="footer-copyright" data-key="footer.copyright">
                     © 2026 SevaSaathi. All rights reserved.
                 </p>
             </div>
@@ -164,8 +197,13 @@
             <img src="../images/logo.png" alt="SevaSaathi Logo" class="footer-logo-img">
         </div>
     </footer>
-
+<script src="../cors/language-dropdown.js"></script>
+        <script src="../cors/loader.js"></script>
+    <script src="../cors/language-guard.js"></script>
+    <script src="../cors/content-loader.js"></script>
     <script src="script.js"></script>
+    <script src="../home-page/script.js"></script>
+
 </body>
 
 </html>

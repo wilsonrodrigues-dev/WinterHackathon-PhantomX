@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>AI Notice Reader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../cors/loader.css">
   <!-- PDF.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
@@ -33,7 +35,7 @@
       background: white;
       padding: 22px;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .upload-box {
@@ -87,173 +89,265 @@
     }
   </style>
 </head>
+
 <body>
-
-<header>AI Notice Reader</header>
-
-<div class="container">
-
-  <div class="upload-box" onclick="fileInput.click()">
-    Upload Government Notice<br>(PDF / PNG / JPG)
-    <input type="file" id="fileInput" hidden accept=".pdf,.png,.jpg,.jpeg" />
+  <!-- GLOBAL LOADER -->
+  <div id="ss-loader">
+    <div class="ss-loader-box">
+      <div class="ss-spinner"></div>
+      <p class="ss-loading-text">Loading Seva Sathi…</p>
+    </div>
   </div>
+  <nav>
+    <div class="logo-container">
+      <img src="../images/logostrok.png" alt="Logo">
+    </div>
 
-  <button id="readBtn" disabled>Read & Explain</button>
+    <div class="ham-btn" id="menuToggle" aria-label="Toggle menu" role="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <div class="status" id="statusText">No file uploaded</div>
+    <div class="nav-menu" id="sideNav">
+      <a href="../home-page/index.html" data-key="nav.home">Home</a>
+      <a href="../home-page/index.html" data-key="nav.about">About</a>
+      <a href="../schemes/index.html" data-key="nav.schemes">Schemes</a>
+      <a href="../doc-updates/index.html" data-key="nav.updates">Updates</a>
+      <!-- <button class="lang-btn"><span data-key="nav.language">Language</span><span>▾</span></button> -->
+    <div class="lang-wrapper">
+        <button class="lang-btn" id="langBtn" type="button">
+          <span data-key="nav.language"></span>
+          <span>▾</span>
+        </button>
 
-  <textarea id="rawText" placeholder="Extracted text will appear here..."></textarea>
-  <div style="display:flex; gap:10px; margin-bottom:15px;">
-  <button onclick="setLanguage('en')" id="enBtn">English</button>
-  <button onclick="setLanguage('kn')" id="knBtn">ಕನ್ನಡ</button>
-</div>
+        <div class="lang-dropdown" id="langDropdown">
+          <button type="button" data-lang="en"><a href="../home-page/index.html"
+              style="color: black;">English</a></button>
+          <button type="button" data-lang="kn"><a href="../home-page/index.html"
+              style="color: black;">ಕನ್ನಡ</a></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
 
-  <h3>📘 Simple Explanation</h3>
-  <pre id="explanation"></pre>
+  <header data-key="header">AI Notice Reader</header>
 
-  <button class="secondary" onclick="playExplanation()">▶ Play Explanation</button>
-  <button class="stop" onclick="stopSpeech()">⏹ Stop</button>
+  <div class="container">
 
-  <h3>📝 Short Summary</h3>
-  <pre id="summary"></pre>
+    <div class="upload-box" onclick="fileInput.click()" data-key="container.upload-box">
+      Upload Government Notice<br>(PDF / PNG / JPG)
+      <input type="file" id="fileInput" hidden accept=".pdf,.png,.jpg,.jpeg" />
+    </div>
 
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script>
-  pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-</script>
+    <button id="readBtn" disabled data-key="container.button">Read & Explain</button>
 
-<script>
+    <div class="status" id="statusText" data-key="container.text">No file uploaded</div>
+
+    <textarea id="rawText" placeholder="Extracted text will appear here..."></textarea>
+    <div style="display:flex; gap:10px; margin-bottom:15px;">
+      <button onclick="setLanguage('en')" id="enBtn" data-key="container.lang-btn">English</button>
+      <button onclick="setLanguage('kn')" id="knBtn">ಕನ್ನಡ</button>
+    </div>
+
+    <h3 data-key="container.header1">📘 Simple Explanation</h3>
+    <pre id="explanation"></pre>
+
+    <button class="secondary" onclick="playExplanation()" data-key="container.btn1">▶ Play Explanation</button>
+    <button class="stop" onclick="stopSpeech()" data-key="container.btn2">⏹ Stop</button>
+
+    <h3 data-key="container.header2">📝 Short Summary</h3>
+    <pre id="summary"></pre>
+
+  </div>
+   <footer>
+    <div class="footer-content">
+      <div class="footer-links-container">
+        <!-- Column 1 -->
+        <div class="footer-column">
+          <ul>
+            <a href="../home-page/index.html" data-key="footer.Column1.home">Home</a>
+            <a href="../home-page/index.html" data-key="footer.Column1.about">About</a>
+            <a href="../schemes/index.html" data-key="footer.Column1.schemes">Schemes</a>
+            <a href="../doc-updates/index.html" data-key="footer.Column1.updates">Updates</a>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-column">
+          <ul>
+            <li><a href="../schemes/index.html" data-key="footer.Column2.links.a1">Government Schemes</a></li>
+            <li><a href="../form-page/index.html" data-key="footer.Column2.links.a2">Form Guidance</a></li>
+            <li><a href="../notice explainer/index.html" data-key="footer.Column2.links.a3">Notice Explainer</a></li>
+            <li><a href="../scam-page/index.html" data-key="footer.Column2.links.a4">Scam Alert</a></li>
+            <li><a href="../doc-updates/index.html" data-key="footer.Column2.links.a5">Doc Updates</a></li>
+            <li><a href="../location feature/helpcenter.html" data-key="footer.Column2.links.a6">Help Center Locator</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <!-- <p class="footer-disclaimer">
+                    We only provide guidance. All submissions happen on official government portals.
+                </p> -->
+        <p class="footer-copyright" data-key="footer.copyright">
+          © 2026 SevaSaathi. All rights reserved.
+        </p>
+      </div>
+    </div>
+
+    <!-- Diagonal Green Triangle -->
+    <div class="footer-triangle"></div>
+
+    <!-- Logo in Triangle -->
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="SevaSaathi Logo" class="footer-logo-img">
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  </script>
+
+  <script>
     if (!localStorage.getItem("language")) {
-  localStorage.setItem("language", "en");
-}
-
-function setLanguage(lang) {
-  localStorage.setItem("language", lang);
-
-  document.getElementById("enBtn").style.opacity =
-    lang === "en" ? "1" : "0.5";
-  document.getElementById("knBtn").style.opacity =
-    lang === "kn" ? "1" : "0.5";
-}
-  const fileInput = document.getElementById("fileInput");
-  const readBtn = document.getElementById("readBtn");
-  const statusText = document.getElementById("statusText");
-  const rawText = document.getElementById("rawText");
-
-  let uploadedFile = null;
-
-  // default language (simulate earlier language page)
-  localStorage.setItem("language", "en"); // change to "kn" to test Kannada
-
-  fileInput.addEventListener("change", () => {
-    uploadedFile = fileInput.files[0];
-    if (uploadedFile) {
-      statusText.innerText = "File selected: " + uploadedFile.name;
-      readBtn.disabled = false;
+      localStorage.setItem("language", "en");
     }
-  });
 
-  readBtn.addEventListener("click", () => {
-    rawText.value = "";
-    document.getElementById("explanation").innerText = "";
-    document.getElementById("summary").innerText = "";
+    function setLanguage(lang) {
+      localStorage.setItem("language", lang);
 
-    if (uploadedFile.type === "application/pdf") {
-      extractFromPDF(uploadedFile);
-    } else {
-      extractFromImage(uploadedFile);
+      document.getElementById("enBtn").style.opacity =
+        lang === "en" ? "1" : "0.5";
+      document.getElementById("knBtn").style.opacity =
+        lang === "kn" ? "1" : "0.5";
     }
-  });
+    const fileInput = document.getElementById("fileInput");
+    const readBtn = document.getElementById("readBtn");
+    const statusText = document.getElementById("statusText");
+    const rawText = document.getElementById("rawText");
 
-  async function extractFromPDF(file) {
-    statusText.innerText = "Extracting text from PDF...";
-    const reader = new FileReader();
-    reader.readAsArrayBuffer(file);
+    let uploadedFile = null;
 
-    reader.onload = async () => {
-      const pdf = await pdfjsLib.getDocument(new Uint8Array(reader.result)).promise;
-      let text = "";
+    // default language (simulate earlier language page)
+    localStorage.setItem("language", "en"); // change to "kn" to test Kannada
 
-      for (let i = 1; i <= pdf.numPages; i++) {
-        const page = await pdf.getPage(i);
-        const content = await page.getTextContent();
-        text += content.items.map(i => i.str).join(" ") + "\n\n";
+    fileInput.addEventListener("change", () => {
+      uploadedFile = fileInput.files[0];
+      if (uploadedFile) {
+        statusText.innerText = "File selected: " + uploadedFile.name;
+        readBtn.disabled = false;
       }
-
-      rawText.value = text;
-      sendToAI(text);
-    };
-  }
-
-  async function extractFromImage(file) {
-    statusText.innerText = "Running OCR...";
-    const result = await Tesseract.recognize(file, "eng+kan");
-    rawText.value = result.data.text;
-    sendToAI(result.data.text);
-  }
-
-  async function sendToAI(text) {
-    statusText.innerText = "AI is explaining the notice...";
-    const lang = localStorage.getItem("language") || "en";
-
-    const res = await fetch("http://localhost:3000/api/explain", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text, language: lang })
     });
 
-    const data = await res.json();
-    displayAIResult(data.result);
-  }
+    readBtn.addEventListener("click", () => {
+      rawText.value = "";
+      document.getElementById("explanation").innerText = "";
+      document.getElementById("summary").innerText = "";
 
-function displayAIResult(text) {
-  document.getElementById("explanation").innerText = text;
-  document.getElementById("summary").innerText =
-    "Summary is included above.";
-  statusText.innerText = "AI response received ✅";
-}
+      if (uploadedFile.type === "application/pdf") {
+        extractFromPDF(uploadedFile);
+      } else {
+        extractFromImage(uploadedFile);
+      }
+    });
 
-function cleanTextForSpeech(text) {
-  return text
-    // remove markdown symbols
-    .replace(/\*\*/g, "")
-    .replace(/[*_#>-]/g, "")
-    // remove extra colons and headings
-    .replace(/EXPLANATION:/gi, "")
-    .replace(/SUMMARY:/gi, "")
-    // remove bullet points
-    .replace(/•/g, "")
-    // collapse extra spaces
-    .replace(/\s+/g, " ")
-    .trim();
-}
+    async function extractFromPDF(file) {
+      statusText.innerText = "Extracting text from PDF...";
+      const reader = new FileReader();
+      reader.readAsArrayBuffer(file);
+
+      reader.onload = async () => {
+        const pdf = await pdfjsLib.getDocument(new Uint8Array(reader.result)).promise;
+        let text = "";
+
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const page = await pdf.getPage(i);
+          const content = await page.getTextContent();
+          text += content.items.map(i => i.str).join(" ") + "\n\n";
+        }
+
+        rawText.value = text;
+        sendToAI(text);
+      };
+    }
+
+    async function extractFromImage(file) {
+      statusText.innerText = "Running OCR...";
+      const result = await Tesseract.recognize(file, "eng+kan");
+      rawText.value = result.data.text;
+      sendToAI(result.data.text);
+    }
+
+    async function sendToAI(text) {
+      statusText.innerText = "AI is explaining the notice...";
+      const lang = localStorage.getItem("language") || "en";
+
+      const res = await fetch("http://localhost:3000/api/explain", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, language: lang })
+      });
+
+      const data = await res.json();
+      displayAIResult(data.result);
+    }
+
+    function displayAIResult(text) {
+      document.getElementById("explanation").innerText = text;
+      document.getElementById("summary").innerText =
+        "Summary is included above.";
+      statusText.innerText = "AI response received ✅";
+    }
+
+    function cleanTextForSpeech(text) {
+      return text
+        // remove markdown symbols
+        .replace(/\*\*/g, "")
+        .replace(/[*_#>-]/g, "")
+        // remove extra colons and headings
+        .replace(/EXPLANATION:/gi, "")
+        .replace(/SUMMARY:/gi, "")
+        // remove bullet points
+        .replace(/•/g, "")
+        // collapse extra spaces
+        .replace(/\s+/g, " ")
+        .trim();
+    }
 
 
-  // 🔊 TEXT TO SPEECH
- function playExplanation() {
-  const rawText = document.getElementById("explanation").innerText;
-  if (!rawText) return;
+    // 🔊 TEXT TO SPEECH
+    function playExplanation() {
+      const rawText = document.getElementById("explanation").innerText;
+      if (!rawText) return;
 
-  const cleanText = cleanTextForSpeech(rawText);
+      const cleanText = cleanTextForSpeech(rawText);
 
-  speechSynthesis.cancel();
-  const utter = new SpeechSynthesisUtterance(cleanText);
+      speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(cleanText);
 
-  utter.lang =
-    localStorage.getItem("language") === "kn" ? "kn-IN" : "en-IN";
-  utter.rate = 0.9;
-  utter.pitch = 1;
+      utter.lang =
+        localStorage.getItem("language") === "kn" ? "kn-IN" : "en-IN";
+      utter.rate = 0.9;
+      utter.pitch = 1;
 
-  speechSynthesis.speak(utter);
-}
+      speechSynthesis.speak(utter);
+    }
 
-  function stopSpeech() {
-    speechSynthesis.cancel();
-  }
-</script>
-
+    function stopSpeech() {
+      speechSynthesis.cancel();
+    }
+  </script>
+<script src="../cors/language-dropdown.js"></script>
+ <script src="../cors/loader.js"></script>
+  <script src="../cors/language-guard.js"></script>
+  <script src="../cors/content-loader.js"></script>
+  <script src="../home-page/script.js"></script>
 
 </body>
+
 </html>
