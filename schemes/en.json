@@ -1,0 +1,18 @@
+{
+    "hero":{
+        "header":"Governmment Schemes",
+        "paragraph":"Empowering you with simple guidance and safe access."
+    },
+    "categories":{
+        "card1":{
+            "header":"Senior Citizen",
+            "paragraph":"Healthcare, travel, and savings schemes for elders.",
+            "link":"View More"
+        },
+        "card2":{
+            "header":"Farmers Schemes",
+            "paragraph":"Financial support and subsidies for agriculture.",
+            "link":"View More"
+        }
+    }
+}
