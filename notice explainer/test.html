@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data=async()=>{
+            let data=await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=AIzaSyAOHZwcHkMiZTaPd9BMnEssyMlyafLoJx8`)
+         let fdata=await data.json();
+        
+        
+            console.log(fdata);
+        }
+        data();
+        
+
+    </script>
+</body>
+
+</html>
