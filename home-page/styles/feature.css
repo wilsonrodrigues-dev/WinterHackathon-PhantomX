@@ -66,7 +66,6 @@ a {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-bottom: 10px solid var(--teal-dark);
-
 }
 
 .feature-card:hover {

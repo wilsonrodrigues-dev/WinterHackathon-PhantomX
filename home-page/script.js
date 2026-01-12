@@ -38,3 +38,14 @@ document.querySelectorAll(".faq-item").forEach((item) => {
     }
   });
 });
+
+
+
+console.log("home.js loaded");
+
+if (typeof loadPageContent === "function") {
+  console.log("Calling loadPageContent()");
+  loadPageContent();
+} else {
+  console.error("loadPageContent is NOT available");
+}
