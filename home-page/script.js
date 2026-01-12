@@ -2,6 +2,29 @@ const menuToggle = document.getElementById("menuToggle");
 const sideNav = document.getElementById("sideNav");
 const navOverlay = document.getElementById("navOverlay");
 
+  const counters = document.querySelectorAll(".count");
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let current = 0;
+
+    const speed = 40; // lower = faster
+
+    const updateCount = () => {
+      const increment = Math.ceil(target / speed);
+
+      if (current < target) {
+        current += increment;
+        counter.innerText = current;
+        setTimeout(updateCount, 40);
+      } else {
+        counter.innerText = target + "+"; // add +
+      }
+    };
+
+    updateCount();
+  });
+  
 // Helper to toggle Menu State
 const toggleMenu = (isOpen) => {
   menuToggle.classList.toggle("open", isOpen);

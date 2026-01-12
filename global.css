@@ -105,7 +105,34 @@ nav {
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
 }
 
+.lang-wrapper {
+  position: relative;
+}
 
+.lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  z-index: 99999;
+  pointer-events: auto;
+}
+
+.lang-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lang-wrapper.show .lang-dropdown {
+  display: block;
+}
 .nav-menu.show {
     right: 0;
 }
