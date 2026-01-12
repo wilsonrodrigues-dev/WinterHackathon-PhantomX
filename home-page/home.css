@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --bg-cream: #FDFBED;
     --teal-dark: #0D4D4D;
     --teal-light:#186434;
@@ -7,6 +7,18 @@
     --crimson-light:#ce4848;
     --darkselmon:darksalmon;
     --crimson-extra-light:#FD8A6B;
+} */
+:root {
+  --charcoal: #264653;
+  --teal: #2a9d8f;
+  --yellow: #e9c46a;
+  --orange: #f4a261;
+  --peach: #e76f51;
+
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
 }
 
 @font-face {
@@ -45,6 +57,8 @@ html,
 body {
     width: 100%;
     overflow-x: hidden;
+    background: linear-gradient(180deg, #f9fafb, #f3f4f6);
+  color: var(--text);
 }
 .hero {
     margin-top: 70px;

@@ -1,3 +1,25 @@
+const menuToggle = document.getElementById("menuToggle");
+const sideNav = document.getElementById("sideNav");
+const navOverlay = document.getElementById("navOverlay");
+
+// Helper to toggle Menu State
+const toggleMenu = (isOpen) => {
+  menuToggle.classList.toggle("open", isOpen);
+  sideNav.classList.toggle("show", isOpen);
+  navOverlay.classList.toggle("show", isOpen);
+  document.body.style.overflow = isOpen ? "hidden" : "";
+};
+
+menuToggle.addEventListener("click", () => {
+  const isOpening = !sideNav.classList.contains("show");
+  toggleMenu(isOpening);
+});
+
+navOverlay.addEventListener("click", () => toggleMenu(false));
+
+sideNav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => toggleMenu(false));
+});
 
 function toggleCard(card) {
     const grid = card.closest(".updates-grid");

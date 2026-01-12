@@ -22,7 +22,7 @@ nav {
     border: 1px solid rgba(13, 77, 77, 0.06);
     position: fixed;
     top: 0;
-    z-index:  1000;
+    z-index:1000;
 
 }
 
@@ -134,12 +134,6 @@ nav {
     transition: all 0.3s ease;
     z-index: 999;
 }
-
-.nav-overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
 
 .signup-btn {
     width: 110px;
@@ -320,7 +314,7 @@ footer {
 
 .footer-copyright {
     font-size: 0.55rem;
-    color: #ffffff;
+    color: #666;
 }
 
 
