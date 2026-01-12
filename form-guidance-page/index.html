@@ -1,95 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="form.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form.css" />
     <title>Form Guidance Page</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
     <section class="scheme-hero">
-    <h1 data-key="hero.header">Form Guidance</h1>
-    <p data-key="hero.paragraph">Empowering you with simple guidance and safe access.</p>
-  </section>
-
-  <main class="container">
-    
-    <section class="upload-section">
-      <h2 data-key="main.section1.header">Upload Your Form (Optional)</h2>
-      <p class="upload-text" data-key="main.section1.paragraph">
-        If you already have a government form (photo or PDF),
-        you can upload it here to identify the form and get guidance.
-      </p>
-
-      <div class="upload-box">
-        <input type="file" id="formUpload" accept=".pdf,image/*">
-        <label for="formUpload" class="upload-btn" data-key="main.section1.upload-box.label">
-          📄 Choose File
-        </label>
-        <span id="fileName" data-key="main.section1.upload-box.span">No file selected</span>
-      </div>
-
-      <p class="upload-note" data-key="main.section1.note">
-        🔒 We do not store your file. This is only for guidance.
+      <h1 data-key="hero.header">Form Guidance</h1>
+      <p data-key="hero.paragraph">
+        Empowering you with simple guidance and safe access.
       </p>
     </section>
 
+    <main class="container">
+      <section class="upload-section">
+        <h2 data-key="main.section1.header">Upload Your Form (Optional)</h2>
+        <p class="upload-text" data-key="main.section1.paragraph">
+          If you already have a government form (photo or PDF), you can upload
+          it here to identify the form and get guidance.
+        </p>
 
-
-    <section class="apply-guidance-section">
-      <h2 >🧭 Important Guidance Before Applying</h2>
-      <p class="section-subtitle" >
-        Please read these points carefully before filling any government form.
-      </p>
-
-      <div class="guidance-list">
-
-        <div class="guidance-block">
-          <h3>✅ Things You SHOULD Do</h3>
-          <ul>
-            <li>🧾 Use only official government websites ending with
-              <strong>.gov.in</strong>
-            </li>
-            <li>📂 Keep Aadhaar, Bank Passbook and ID proofs ready
-            </li>
-            <li>✍️ Check spelling of your name and date of birth
-              carefully</li>
-            <li>📸 Save screenshots or photocopies after submission
-            </li>
-            <li>👨‍👩‍👧 Ask a trusted family member if you feel
-              unsure</li>
-          </ul>
+        <div class="upload-box">
+          <input type="file" id="formUpload" accept=".pdf,image/*" />
+          <label
+            for="formUpload"
+            class="upload-btn"
+            data-key="main.section1.upload-box.label"
+          >
+            📄 Choose File
+          </label>
+          <span id="fileName" data-key="main.section1.upload-box.span"
+            >No file selected</span
+          >
         </div>
 
-        <div class="guidance-block">
-          <h3>❌ Things You SHOULD NOT Do</h3>
-          <ul>
-            <li>🔐 Do not share OTP, PIN or bank details with anyone
-            </li>
-            <li>💸 Do not pay agents who promise quick approval</li>
-            <li>📵 Do not click unknown links sent via SMS or
-              WhatsApp</li>
-            <li>🌐 Do not fill forms on unofficial websites</li>
-          </ul>
+        <p class="upload-note" data-key="main.section1.note">
+          🔒 We do not store your file. This is only for guidance.
+        </p>
+      </section>
+
+      <section id="formList">
+        <h2>Select a Form</h2>
+        <div class="form-area">
+          <div id="formGrid" class="form-grid" onclick="selectform()"></div>
         </div>
+      </section>
+      <div id="formDetails" class="category-hint" data-key="main.div.note">
+      Click a category above to view available schemes.
+    </div>
+<section id="guidance" class="hidden">
+      <div class="guide-card">
 
-        <div class="guidance-block">
-          <h3>ℹ️ Important Things to Know</h3>
-          <ul>
-            <li>🆓 Most government services are free of cost</li>
-            <li>⏳ Approval may take time — delays are normal</li>
-            <li>📞 Government never asks for money over phone calls
-            </li>
-            <li>🔍 Always verify website address before entering
-              details</li>
-          </ul>
+        <button class="back-btn" onclick="goBack()" data-key="main.section3.guide-card.button">← Back to List</button>
+
+        <h2 id="gTitle"></h2>
+
+        <p data-key="main.section3.guide-card.p1">✅ <strong>Eligibility:</strong> <span id="gEligibility"></span></p>
+        <p data-key="main.section3.guide-card.p2">💰 <strong>Benefits:</strong> <span id="gBenefits"></span></p>
+        <p data-key="main.section3.guide-card.p3">📂 <strong>Documents:</strong> <span id="gDocuments"></span></p>
+        <p data-key="main.section3.guide-card.p4">🛠 <strong>Steps to Apply:</strong> <span id="gSteps"></span></p>
+
+        <!-- PDF -->
+        <div id="pdfSection" class="hidden">
+          <h3 data-key="main.section3.div1.header">📄 Official Form</h3>
+          <iframe id="pdfFrame"></iframe>
+          <a id="pdfDownload" class="btn-outline" target="_blank" rel="noopener noreferrer" download
+            data-key="main.section3.div1.link">⬇Open / Download
+            PDF</a>
         </div>
+    <div id="categoryDetails" class="hidden"></div>
 
-      </div>
+      <section class="apply-guidance-section">
+        <h2>🧭 Important Guidance Before Applying</h2>
+        <p class="section-subtitle">
+          Please read these points carefully before filling any government form.
+        </p>
 
-</section>
-     </main>
-</body>
+        <div class="guidance-list">
+          <div class="guidance-block">
+            <h3>✅ Things You SHOULD Do</h3>
+            <ul>
+              <li>
+                🧾 Use only official government websites ending with
+                <strong>.gov.in</strong>
+              </li>
+              <li>📂 Keep Aadhaar, Bank Passbook and ID proofs ready</li>
+              <li>
+                ✍️ Check spelling of your name and date of birth carefully
+              </li>
+              <li>📸 Save screenshots or photocopies after submission</li>
+              <li>👨‍👩‍👧 Ask a trusted family member if you feel unsure</li>
+            </ul>
+          </div>
+
+          <div class="guidance-block">
+            <h3>❌ Things You SHOULD NOT Do</h3>
+            <ul>
+              <li>🔐 Do not share OTP, PIN or bank details with anyone</li>
+              <li>💸 Do not pay agents who promise quick approval</li>
+              <li>📵 Do not click unknown links sent via SMS or WhatsApp</li>
+              <li>🌐 Do not fill forms on unofficial websites</li>
+            </ul>
+          </div>
+
+          <div class="guidance-block">
+            <h3>ℹ️ Important Things to Know</h3>
+            <ul>
+              <li>🆓 Most government services are free of cost</li>
+              <li>⏳ Approval may take time — delays are normal</li>
+              <li>📞 Government never asks for money over phone calls</li>
+              <li>🔍 Always verify website address before entering details</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="form.js"></script>
+  </body>
 </html>
