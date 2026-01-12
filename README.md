@@ -1,166 +1,153 @@
-#  Winter Hackathon - Repository Setup Guide
 
-Welcome to the Winter Hackathon organized by **Sceptix** and **GDG SJEC**! To track your progress and collaborate effectively, every team must fork the official repository and follow the steps below.
+**SevaSaathi**
+
+## 📌 Description
+
+**SevaSaathi** is a citizen-centric digital companion designed to help Indian citizens—especially senior citizens—access government services with confidence.
+
+India has hundreds of government schemes, certificates, and online forms, but many people struggle to understand:
+
+* Which schemes they are eligible for
+* How to fill government forms
+* Which websites and links are safe
+
+This confusion leads to missed benefits, dependency on agents, and increasing scams targeting elders.
+
+SevaSaathi solves this by providing:
+
+* Step-by-step form guidance
+* Verified government PDFs and links
+* Voice-based explanations
+* AI Notice explainer
+* Kannada and Easy Kannada language support
+* SMS scam alerts for extra safety
+
+SevaSaathi does not replace government portals — it acts as a **trusted guide** that helps citizens navigate them safely and independently.
+
+
+# 🎥 Demo Video
+
+**Demo Video Link:**
+
 
 ---
 
-##  Fork the Repository
+## ✨ Features
 
-1. Go to the GitHub page: [https://github.com/gdgsjec/WinterHackathon-TEAM_NAME-](https://github.com/gdgsjec/WinterHackathon-TEAM_NAME-)
-2. Click on the **"Fork"** button in the upper-right corner of the page
-3. Assign the repository name as `WinterHackathon-<TeamName>`
-> 📝 **Note:** Please use **[PascalCase](https://pascal-case.com/)** for your team name.
+* 🧾 **Form Filling Guidance**
+  Step-by-step instructions for filling government forms like Pension, Aadhaar Update, Income Certificate, etc.
 
+* 📄 **Official Form Preview & Download**
+  Users can view and download only verified government PDFs.
 
-**Example:**
-```
-Repository Name: WinterHackathon-BossBandit
-```
+* 🧭 **Scheme Explorer**
+  Helps users understand which government schemes they qualify for.
 
----
+* 🔊 **Read-Aloud Support**
+  Instructions are read aloud for elderly and low-literacy users.
 
-##  Clone Your Forked Repository
+* 🌐 **Multi-Language Support**
+  English, Kannada, and Easy Kannada.
 
-1. Go to your forked repository on GitHub
-2. Click the green **"Code"** button, then click the clipboard icon to copy the URL
-3. Open your terminal and run the following command to copy the repository to your local machine (replace `<repository-url>` with your forked repository URL):
+* 📱 **SMS Scam Alerts**
+  Elders receive warnings about fraud and fake government messages.
 
-```bash
-git clone <repository-url>
-```
+* 🔐 **Optional Login for SMS Alerts**
+  Users can use Google or Email login to receive scam alerts.
 
 ---
 
-##  Start Working on Your Project
+## 🛠 Tech Stack
 
-Begin building your solution! Collaborate with your teammates and push changes regularly.
+* **Frontend:**
+  HTML, CSS, JavaScript
 
----
-## Update the README (Mandatory)
+* **Backend & Authentication:**
+  Firebase Authentication
 
-Before writing any code, replace the existing README.md with information specific to your project.
-Your README is the first thing mentors and judges will see, so make sure it clearly explains what you built and why.
-You can replace the README with the recommended template below and update the contents as you work on the project.
+* **Database:**
+  Firebase Firestore
 
-### Recommended Format for README:
-Use the structure below:
-```
- # Project Name
+* **Hosting:**
+  Google Cloud
 
-## Description
-Briefly explain what your project does, the problem it solves, and who it is for.
-
-# Demo Video Link: <insert Google Drive link to the demo video of the working of your project>
-
-## Features
-- Key feature 1
-- Key feature 2
-- Key feature 3
-
-## Tech Stack
-List the technologies, frameworks, and tools used in the project.
-
-## Google Technologies Used
-> ⚠️ Using Google products is **mandatory** for this hackathon.
-
-List the Google technologies you used and clearly explain **why** you chose them.
-
-**Example:**
-- **Firebase Authentication** – For secure and easy user authentication
-- **Firebase Firestore** – To store and manage real-time data
-- **Google Maps API** – To enable location-based features
-
-## Setup Instructions
-Steps to run the project locally:
-1. Clone the repository
-2. Install dependencies
-3. Add environment variables (if any)
-4. Run the project
-
-## Team Members
-- Name 1
-- Name 2
-- Name 3
-```
-
-
-## Commit Your Changes
-
-Track and save your progress using Git:
-
-### Check the status of your changes
-```bash
-git status
-```
-
-### Stage your changes
-Use the `git add` command to stage the changes you want to commit:
-```bash
-git add .
-```
-
-### Commit with a meaningful message
-
-#### **Option 1: Simple Commit Format** (Beginner Friendly)
-Use this if you're new to Git:
-```bash
-git commit -m "Your descriptive commit message"
-```
-
-#### **Option 2: Conventional Commits** (Recommended)
-Follow this format for more structured, professional commit history:
-```bash
-git commit -m "<type>(<scope>): <subject>"
-```
-
-**Commit Types:**
-
-| Type | Purpose |
-|------|---------|
-| `feat` | For a new feature for the user, not a new feature for build script. Such commit will trigger a release bumping a MINOR version |
-| `fix` | For a bug fix for the user, not a fix to a build script. Such commit will trigger a release bumping a PATCH version |
-| `perf` | For performance improvements. Such commit will trigger a release bumping a PATCH version |
-| `docs` | For changes to the documentation |
-| `test` | For adding missing tests, refactoring tests; no production code change |
-| `style` | For formatting changes, missing semicolons, etc |
-| `refactor` | For refactoring production code, e.g. renaming a variable |
-| `build` | For updating build configuration, development tools or other changes irrelevant to the user |
-
-- **Scope:** Area of change (e.g., api, ui, auth)
-- **Subject:** One-line summary in present tense, no period at the end
-
-**Example:**
-```bash
-git commit -m "fix(button): fix submit button not working"
-```
+* **Other Tools:**
+  Google Firebase SDK, Speech Synthesis API
 
 ---
 
-## Push Your Changes
+## 🔵 Google Technologies Used
 
-Send your local commits to GitHub:
-```bash
-git push origin
+> ⚠️ Google products are mandatory for this hackathon.
+
+We used the following Google technologies:
+
+* **Firebase Authentication**
+  Used for Google and Email-Password login so users can securely register for SMS scam alerts.
+
+* **Firebase Firestore**
+  Used to store user phone numbers and alert preferences linked to their Firebase User ID.
+
+* **Firebase Hosting / SDK**
+  Used to securely connect the web app with Google services.
+
+These Google technologies were chosen because they are:
+
+* Secure
+* Scalable
+* Easy to integrate
+* Trusted for citizen-facing applications
+
+---
+
+## ⚙️ Setup Instructions
+
+To run SevaSaathi locally:
+
+1. **Clone the repository**
+
+```
+git clone <your-repo-link>
+cd seva-saathi
 ```
 
+2. **Open the project**
+   Open the folder in VS Code or any code editor.
+
+3. **Create Firebase Project**(optional)
+
+* Go to [https://console.firebase.google.com](https://console.firebase.google.com)
+* Create a new project
+* Enable:
+
+  * Authentication (Google + Email/Password)
+  * Firestore Database
+
+4. **Add Firebase Config**(optional)
+   Replace the Firebase config inside:
+
+```
+login.js  
+phone.js  
+script.js
+```
+
+with your own Firebase project keys.
+
+5. **Run the app**
+   Open `index.html` using Live Server or any local web server.
+
 ---
 
-##  Tips for Success
+## 👥 Team Members
 
-- **Commit often:** Small, frequent commits help track progress and fix bugs easily
-- **Write clear messages:** Describe what you did in each commit
-- **Collaborate:** Make sure everyone in your team contributes
-- **Stay organized:** Use branches for different features if needed
-- **Test regularly:** Ensure your code works before pushing
+* **Member 1:** Wilson Rodrigues
+* **Member 2:** Rashmitha P
+* **Member 3:** Vineeth Monis
+* **Member 4:** Miranda Stephen Marcel
 
----
-
-##  Need Help?
-
-For any issues or doubts, reach out to the organizing team.
-
-**Happy Hacking!** ✨
+**Team Name:** PhantomX
+**Hackathon:** GDG Winter Hackathon
 
 ---
 
-*Organized by Sceptix & GDG SJEC*  

@@ -49,3 +49,23 @@ if (typeof loadPageContent === "function") {
 } else {
   console.error("loadPageContent is NOT available");
 }
+
+
+
+const animatedCards = document.querySelectorAll(
+  ".feature-card, .abcard, .abcard2, .contact"
+);
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // animate only once
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+animatedCards.forEach(card => observer.observe(card));

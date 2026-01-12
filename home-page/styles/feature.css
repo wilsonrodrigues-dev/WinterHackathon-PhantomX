@@ -212,3 +212,23 @@ a {
         padding: 0.5rem;
     }
 }
+
+
+/* Hidden state */
+.feature-card,
+.abcard,
+.abcard2,
+.contact {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When visible */
+.feature-card.show,
+.abcard.show,
+.abcard2.show,
+.contact.show {
+  opacity: 1;
+  transform: translateY(0);
+}

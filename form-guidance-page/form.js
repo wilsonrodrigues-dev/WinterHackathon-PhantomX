@@ -15,7 +15,7 @@ menuToggle.addEventListener("click", () => {
   toggleMenu(isOpening);
 });
 
-navOverlay.addEventListener("click", () => toggleMenu(false));
+// navOverlay.addEventListener("click", () => toggleMenu(false));
 
 sideNav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => toggleMenu(false));
