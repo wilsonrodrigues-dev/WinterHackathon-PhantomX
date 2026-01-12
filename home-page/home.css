@@ -1,3 +1,10 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ===== LOGIN PAGE ===== */
 .login-page {
 background: linear-gradient(90deg,#c9d8a1b0,#7f9d2b);

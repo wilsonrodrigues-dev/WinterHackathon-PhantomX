@@ -37,3 +37,32 @@ readBtn.addEventListener("click", () => {
     extractFromImage(uploadedFile);
   }
 });
+
+async function extractFromPDF(file) {
+  statusText.innerText = "Extracting text from PDF...";
+  const reader = new FileReader();
+  reader.readAsArrayBuffer(file);
+
+  reader.onload = async () => {
+    const pdf = await pdfjsLib.getDocument(new Uint8Array(reader.result))
+      .promise;
+    let text = "";
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      text += content.items.map((i) => i.str).join(" ") + "\n\n";
+    }
+
+    rawText.value = text;
+    sendToAI(text);
+  };
+}
+
+async function extractFromImage(file) {
+  statusText.innerText = "Running OCR...";
+  const result = await Tesseract.recognize(file, "eng+kan");
+  rawText.value = result.data.text;
+  sendToAI(result.data.text);
+}
+
