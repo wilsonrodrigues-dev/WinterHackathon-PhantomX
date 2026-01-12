@@ -238,7 +238,7 @@ main {
 }
 
 .detail-content ul {
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -266,7 +266,7 @@ main {
     position: absolute;
     left: 0;
     top: 0;
-    background: var(--card-color);
+    background: var(--teal-dark);
     color: white;
     width: 35px;
     height: 35px;
@@ -278,8 +278,8 @@ main {
 }
 
 .action-btn {
-    background: var(--card-color);
-    color: var(--teal-dark);
+    background: var(--green-accent);
+    color: var(--white);
     border: none;
     padding: 12px 24px;
     border-radius: 8px;
