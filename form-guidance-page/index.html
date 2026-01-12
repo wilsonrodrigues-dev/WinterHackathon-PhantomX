@@ -4,9 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="../global.css">
     <title>Form Guidance Page</title>
   </head>
   <body>
+    <nav>
+        <div class="logo-container">
+            <img src="../images/logostrok.png" alt="Logo">
+        </div>
+
+        <div class="ham-btn" id="menuToggle" aria-label="Toggle menu" role="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-menu" id="sideNav">
+            <a href="../home-page/index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="../schemes/index.html">Schemes</a>
+            <a href="../doc-updates-page/index.html">Updates</a>
+            <!-- <a href="#log-in"><button class="signup-btn">Sign Up</button></a> -->
+            <!-- <button class="lang-btn"> <span data-key="nav.language">Language </span><span>▾</span></button> -->
+            <div class="lang-wrapper">
+                <button class="lang-btn" type="button">
+                    <span>Language</span>
+                    <span class="arrow">▾</span>
+                </button>
+
+                <div class="lang-dropdown">
+                    <button >English</button>
+                    <button >ಕನ್ನಡ</button>
+                </div>
+            </div>
+
+        </div>
+    </nav>
     <section class="scheme-hero">
       <h1 data-key="hero.header">Form Guidance</h1>
       <p data-key="hero.paragraph">

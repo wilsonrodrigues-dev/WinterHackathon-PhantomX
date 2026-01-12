@@ -21,7 +21,8 @@ body {
 .scheme-hero {
   background-color: var(--teal-dark);
   color: var(--white);
-  padding: 25px 25px;
+  height: 150px;
+  padding: 65px 25px 0px 25px;
   text-align: center;
   border-radius: 0 0 40px 40px;
   margin-bottom: 30px;
