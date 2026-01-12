@@ -54,13 +54,13 @@ body {
     font-weight: bolder;
 }
 
-.container div{
+.container div {
     margin-top: 1px;
     width: 90%;
     height: 17%;
     background-color: var(--warn-red);
     border-radius: 0 50px 50px 0;
-    border-left:10px solid black;
+    border-left: 10px solid black;
     padding: 10px;
 }
 
@@ -209,4 +209,152 @@ body {
     font-size: 0.95rem;
     position: relative;
     z-index: 1;
+}
+
+.scam-card strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Report Section */
+.report-section {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    padding: 3rem 1rem;
+    text-align: center;
+    color: white;
+    margin-top: 3rem;
+}
+
+.report-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.report-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+.panic-btn {
+    display: inline-block;
+    background: white;
+    color: #dc2626;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.panic-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.panic-btn:active {
+    transform: scale(0.98);
+}
+
+.sub-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .container p {
+        font-size: 20px;
+    }
+
+    .container div {
+        width: 70%;
+        height: 10%;
+        padding: 15px;
+    }
+
+    .hero {
+        height: 600px;
+    }
+
+    .warning-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .scam-behind {
+        height: 300px;
+    }
+
+    .scam-card {
+        transform: rotateY(-8deg) rotateX(5deg);
+    }
+
+    .scam-card:hover {
+        transform: rotateY(0deg) rotateX(0deg) translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .report-container h2 {
+        font-size: 2.5rem;
+    }
+
+    .panic-btn {
+        font-size: 1.3rem;
+        padding: 1.2rem 3rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+
+    .hero {
+        margin-top: 70px;
+        height: 100vh;
+    }
+
+    .container p {
+        font-size: 20px;
+    }
+
+    .container div {
+        width: 90%;
+        height: 12%;
+        padding: 10px;
+    }
+
+    .warning-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .scam-behind {
+        height: 320px;
+    }
+
+    .scam-card {
+        padding: 2.5rem 2rem;
+        transform: rotateY(-10deg) rotateX(6deg);
+    }
+
+    .scam-card:hover {
+        transform: rotateY(0deg) rotateX(0deg) translateY(-15px);
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+    }
+
+    .container p {
+        font-size: 40px;
+
+    }
 }

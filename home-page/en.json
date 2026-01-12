@@ -1,5 +1,5 @@
 {
-    "nav": {
+  "nav": {
     "home": "Home",
     "about": "About",
     "schemes": "Schemes",
@@ -35,32 +35,104 @@
 
     "card2": {
       "title": "Form Guidance",
-      "description": "All guidance is available in Kannada and other regional languages for easy understanding. We provide step-by-step instructions on how to fill out government forms correctly, what documents you need, and where to submit them.",
+      "description": "All guidance is available in Kannada and other regional languages for easy understanding. We provide step-by-step instructions on how to fill out government forms correctly, what documents you need, and where to submit them. No more confusion about complicated application processes—we make it simple and clear in your native language.",
       "cta": "More"
     },
 
     "card3": {
       "title": "Notice Explainer",
-      "description": "Learn how to identify fake messages and avoid government-related scams. We help you understand official government notices, distinguish them from fraudulent ones, and explain what actions you need to take.",
+      "description": "Learn how to identify fake messages and avoid government-related scams. We help you understand official government notices, distinguish them from  fraudulent ones, and explain what actions you need to take. Stay informed about important updates and deadlines without falling victim to scammers who target senior citizens.",
       "cta": "More"
     },
 
     "card4": {
       "title": "Scam Alert",
-      "description": "We only guide you and redirect to official government portals—no data collection. Stay safe from fraudsters who pose as government officials asking for money, OTPs, or personal information.",
+      "description": "We only guide you and redirect to official government portals—no data collection. Stay safe from fraudsters who pose as government officials asking for money, OTPs, or personal information. We provide real-time alerts about common scams targeting seniors and teach you how to verify genuine government communications.",
       "cta": "More"
     },
 
     "card5": {
       "title": "Doc Updates",
-      "description": "We keep you informed about important document updates and renewals including Aadhaar, passport, ration card, and more.",
+      "description": "We keep you informed about important document updates and renewals including Aadhaar, passport, ration card, and modifications, and other essential documentation. We explain what changes are needed, why they're important, and guide you through the update process step-by-step.",
       "cta": "More"
     },
 
     "card6": {
       "title": "Help Center Locator",
-      "description": "Find the nearest government offices, Jan Seva Kendras, and authorized help centers in your area with accurate contact details and directions.",
+      "description": "Find the nearest government offices, Jan Seva Kendras, and authorized help centers in your area with accurate contact details and directions so you can get in-person assistance when needed. No more wandering around—find the right place to get help quickly and easily.",
       "cta": "More"
     }
-  }
+  },
+
+  "login": {
+    "back": "← Back",
+    "title": "Welcome to SevaSaathi",
+    "subtitle": "Sign in to receive verified scam alerts and safety updates.",
+    "email": "Email address",
+    "password": "Password",
+    "signin": "Sign in with Email",
+    "signup": "Create New Account",
+    "or": "OR",
+    "google": "Continue with Google",
+    "note": "We never ask for OTP, PIN, or bank details."
+  },
+
+  "about": {
+    "title": "About Us",
+    "intro": "SevaSaathi is a dedicated digital platform designed to bridge the gap between senior citizens and government services in India.",
+    "missionTitle": "Our Mission",
+    "mission": "To empower senior citizens with the knowledge, guidance, and support they need to access their rightful benefits without confusion, fear, or dependency.",
+    "serveTitle": "We Serve",
+    "serve": "SevaSaathi serves as a trusted companion for senior citizens across India, offering information about pension schemes, healthcare benefits, and government services.",
+    "contact": "Contact",
+    "phone": "phone:95814637620"
+  },
+
+  "faq": {
+    "title": "Frequently Asked Questions",
+
+    "q1": {
+      "question": "1. Is SevaSaathi a government website?",
+      "answer": "No, SevaSaathi is not a government website. We are an independent guidance platform that helps you understand and access official government services. We redirect you to official government portals for all applications and submissions. Think of us as your helpful guide, not a replacement for government websites."
+    },
+
+    "q2": {
+      "question": "Is SevaSaathi free to use?",
+      "answer": "Yes, SevaSaathi is completely free to use. We do not charge any fees for our guidance services, tutorials, or support. All our resources and information are provided at no cost to help senior citizens access government schemes without any financial burden."
+    },
+
+    "q3": {
+      "question": "Do you collect or store my personal information?",
+      "answer": "No, we do not collect, store, or share any personal information. SevaSaathi only provides guidance and redirects you to official government portals where you can safely submit your information directly to the government. Your privacy and security are our top priorities."
+    },
+
+    "q4": {
+      "question": "How can I identify fake government messages?",
+      "answer": "Government agencies never ask for money via SMS or WhatsApp, never request OTPs or passwords, and always use official domains ending in .gov.in. Be cautious of messages with urgent language, spelling errors, or requests for immediate payment. Our Notice Explainer feature provides detailed guidance on identifying scams."
+    },
+
+    "q5": {
+      "question": "What government schemes are available for senior citizens?",
+      "answer": "There are many schemes including Indira Gandhi National Old Age Pension Scheme, Pradhan Mantri Vaya Vandana Yojana, Senior Citizen Savings Scheme, health insurance under Ayushman Bharat, and various state-specific benefits. Visit our Government Schemes section for a complete list with eligibility criteria and application procedures."
+    }
+  },
+    "footer": {
+        "column1": {
+            "home": "Home",
+            "about": "About",
+            "schemes": "Schemes",
+            "updates": "Updates"
+        },
+        "column2": {
+            "link": {
+                "a1": "Government Schemes",
+                "a2": "Form Guidance",
+                "a3": "Notice Explainer",
+                "a4": "Scam Alert",
+                "a5": "Doc Updates",
+                "a6": "Help Center Locator"
+            }
+        },
+        "copyright": "© 2026 SevaSaathi. All rights reserved."
+    }
 }
