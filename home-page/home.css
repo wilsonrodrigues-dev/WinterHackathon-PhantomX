@@ -364,7 +364,7 @@ body {
 
 /* ===== LOGIN PAGE ===== */
 .login-page {
-background: linear-gradient(90deg,#c9d8a1b0,#7f9d2b);
+background: linear-gradient(to top,#e07511,#d6c6c2);
   min-height: 100vh;
   /* background:
   url("../demo/img/hero.jpeg");

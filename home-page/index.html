@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="./styles/feature.css">
+    <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="./styles/faq.css">
     <title>SevaSaathi</title>
   </head>
   <body>
@@ -24,7 +26,7 @@
             <a href="#">Home</a>
             <a href="#about">About</a>
             <a href="../schemes/index.html">Schemes</a>
-            <a href="../doc-updates/index.html">Updates</a>
+            <a href="../doc-updates-page/index.html">Updates</a>
             <a href="#log-in"><button class="signup-btn">Sign Up</button></a>
             <!-- <button class="lang-btn"> <span data-key="nav.language">Language </span><span>▾</span></button> -->
             <div class="lang-wrapper">
@@ -217,11 +219,65 @@
         </div>
     </section>
 
-
+<!-- About Section -->
+    <section class="about" id="about">
+        <h2 data-key="about.title">About Us</h2>
+        <div class="about-content">
+            <div class="abcard">
+                <p data-key="about.intro">
+                    SevaSaathi is a dedicated digital platform designed to bridge the gap between senior citizens
+                    and government services in India. We understand that navigating the complex landscape of government
+                    schemes applications, and digital portals can be overwhelming, especially for our elderly population
+                    who may not be familiar with modern technology or online processes.
+                </p>
+            </div>
+            <div class="abcard">
+                <div class="a-box">
+                    <div class="up">
+                        <h3 data-key="about.missionTitle">Our mission </h3>
+                    </div>
+                    <p data-key="about.mission">
+                        Our mission is simple yet powerful: to empower senior citizens with the knowledge, guidance, and
+                        support they need to access their rightful benefits and services without confusion, fear, or
+                        dependency.
+                        We believe that every senior citizen deserves dignity, independence, and easy access to
+                        government schemes
+                        that can improve their quality of life.
+                    </p>
+                </div>
+            </div>
+            <div class="abcard2">
+                <div class="a-box">
+                    <div class="up">
+                        <h3 data-key="about.serveTitle">We Serve</h3>
+                    </div>
+                    <p data-key="about.serve">
+                        SevaSaathi serves as a trusted companion for senior citizens across India, offering information
+                        about pension schemes, healthcare benefits, financial assistance programs, document updates, and
+                        much
+                        more.Our platform features a help center locator to find nearby government offices, real-time
+                        updates
+                        about new schemes, and a community of support dedicated to ensuring that no senior citizen is
+                        left behind in the digital age.
+                    </p>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="a-box">
+                    <div class="up">
+                        <h3 data-key="about.contact">Contact</h3>
+                    </div>
+                    <div>
+                        <h4 data-key="about.phone">phone:95814637620</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="login-page">
   <div class="hero-left">
-    <h1>Welcome to SevaSaathi</h1>
+    <h1> SevaSaathi</h1>
     <p>
       India’s trusted platform for scam alerts, fraud warnings, and digital safety.
     </p>
@@ -263,6 +319,82 @@
 </div>
 </section>
 
+<!-- FAQ section -->
+<section class="faq">
+        <h2 data-key="faq.title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <!-- FAQ 1 -->
+            <div class="faq-item" onclick="toggleFaq(this)" role="button" tabindex="0">
+                <div class="faq-question-container">
+                    <span class="faq-question" data-key="faq.q1.question">1. Is SevaSaathi a government website?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-key="faq.q1.answer">
+                    No, SevaSaathi is not a government website. We are an independent guidance platform that helps you
+                    understand and access official government services. We redirect you to official government portals
+                    for all applications and submissions. Think of us as your helpful guide, not a replacement for
+                    government websites.
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question-container">
+                    <span class="faq-question" data-key="faq.q2.question">2. Is SevaSaathi free to use?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-key="faq.q2.answer">Yes, SevaSaathi is completely free to use. We do not
+                    charge any fees for our guidance services, tutorials, or support. All our resources and information
+                    are provided at no cost to help senior citizens access government schemes without any financial
+                    burden.
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question-container">
+                    <span class="faq-question" data-key="faq.q3.question">3. Do you collect or store my personal
+                        information?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-key="faq.q3.answer">No, we do not collect, store, or share any personal
+                    information. SevaSaathi only provides guidance and redirects you to official government portals
+                    where you can safely submit your information directly to the government. Your privacy and security
+                    are our top priorities.
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question-container">
+                    <span class="faq-question" data-key="faq.q4.question">4. How can I identify fake government
+                        messages?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-key="faq.q4.answer">Government agencies never ask for money via SMS or
+                    WhatsApp, never request OTPs or passwords, and always use official domains ending in .gov.in. Be
+                    cautious of messages with urgent language, spelling errors, or requests for immediate payment. Our
+                    Notice Explainer feature provides detailed guidance on identifying scams.
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question-container">
+                    <span class="faq-question" data-key="faq.q5.question">5. What government schemes are available for
+                        senior citizens?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-key="faq.q5.answer">There are many schemes including Indira Gandhi National
+                    Old Age Pension Scheme, Pradhan Mantri Vaya Vandana Yojana, Senior Citizen Savings Scheme, health
+                    insurance under Ayushman Bharat, and various state-specific benefits. Visit our Government Schemes
+                    section for a complete list with eligibility criteria and application procedures.
+                </div>
+            </div>
+</div>
+    </section>
+
+    <!-- Footer Section -->
 
 <footer>
         <div class="footer-content">
@@ -312,7 +444,7 @@
             <img src="../images/logo.png" alt="SevaSaathi Logo" class="footer-logo-img">
         </div>
     </footer>
-
+<script type="module" src="script.js" defer></script>
 <script type="module" src="login.js"></script>
   </body>
 </html>
