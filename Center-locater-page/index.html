@@ -14,23 +14,25 @@
 
     <main>
         <div class="header">
-            <h2><i class="ri-user-location-line"></i> Get your Nearest government help center <i class="ri-map-2-fill"></i></h2>
+            <h2><i class="ri-user-location-line"></i> Get your Nearest government help center <i
+                    class="ri-map-2-fill"></i></h2>
         </div>
         <div class="controls">
-            <button><i class="ri-map-pin-fill"></i>Use My Location</button>
-            <select title="city">
-                <option value=""> Search By City</option>
-                <option value="Bangaluru">Bangaluru</option>
-                <option value="Mysuru">Mysuru</option>
-                <option value="Mangaluru">Mangaluru</option>
-                <option value="Hubballi">Hubballi</option>
-                <option value="Belagavi">Belagavi</option>
-                <option value="Shivamogga"> Shivamogga</option>
+            <button onclick="useMyLocation()" data-key="controls.button">📍 Use My Location</button>
+
+            <select onchange="searchByCity(this.value)">
+                <option value="" data-key="controls.select.value1">Search by City</option>
+                <option value="Bengaluru" data-key="controls.select.value2">Bengaluru</option>
+                <option value="Mysuru" data-key="controls.select.value3">Mysuru</option>
+                <option value="Mangaluru" data-key="controls.select.value4">Mangaluru</option>
+                <option value="Hubballi" data-key="controls.select.value5">Hubballi</option>
+                <option value="Belagavi" data-key="controls.select.value6">Belagavi</option>
+                <option value="Shivamogga" data-key="controls.select.value7">Shivamogga</option>
             </select>
         </div>
+
         <div id="map"></div>
     </main>
-
     <script>
         let map;
         let service;
@@ -44,13 +46,15 @@
             Belagavi: { lat: 15.8497, lng: 74.4977 },
             Shivamogga: { lat: 13.9299, lng: 75.5681 }
         };
+
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: 15.3173, lng: 75.7139 }, //Using Karnataka Lat and Lng
+                center: { lat: 15.3173, lng: 75.7139 }, // Karnataka
                 zoom: 7
             });
         }
 
+        // -------- USE MY LOCATION --------
         function useMyLocation() {
             if (!navigator.geolocation) {
                 alert("Geolocation not supported");
@@ -83,6 +87,8 @@
                 }
             );
         }
+
+        // -------- SEARCH BY CITY --------
         function searchByCity(city) {
             if (!city) return;
 
@@ -94,6 +100,8 @@
             clearMarkers();
             findHelpCenters(location);
         }
+
+        // -------- COMMON SEARCH LOGIC --------
         function findHelpCenters(location) {
             service = new google.maps.places.PlacesService(map);
 
@@ -143,8 +151,8 @@
             markers.forEach(m => m.setMap(null));
             markers = [];
         }
-
     </script>
+
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgu9ThTU02IqywYz489aYzN_j2utn1q1o&libraries=places&callback=initMap"
         async defer>
