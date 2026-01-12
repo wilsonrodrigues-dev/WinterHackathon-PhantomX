@@ -151,4 +151,52 @@ function openForm(i) {
     Steps are ${f.steps.join(", ")}.`
   );
 
+  categoryHint.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  // Highlight animation
+  categoryHint.classList.add("highlight");
+  setTimeout(() => categoryHint.classList.remove("highlight"), 1200);
+}
+function goBack() {
+  stopReading();
+
+  guidance.classList.add("hidden");
+//  hintText.style.display = "block";
+  // Restore default hint message
+  categoryHint.innerHTML = `
+    Click a form above to view guidance and official details.
+  `;
+
+  document.getElementById("formList").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function startReading() {
+  if (speech) {
+    speechSynthesis.cancel();
+    speechSynthesis.speak(speech);
+  }
+}
+
+function stopReading() {
+  speechSynthesis.cancel();
+}
+
+// File upload handling
+const formUpload = document.getElementById("formUpload");
+const fileName = document.getElementById("fileName");
+
+if (formUpload) {
+  formUpload.addEventListener("change", () => {
+    if (formUpload.files.length > 0) {
+      fileName.innerText = formUpload.files[0].name;
+    } else {
+      fileName.innerText = "No file selected";
+    }
+  });
 }

@@ -48,30 +48,74 @@
         </div>
       </section>
       <div id="formDetails" class="category-hint" data-key="main.div.note">
-      Click a category above to view available schemes.
-    </div>
-<section id="guidance" class="hidden">
-      <div class="guide-card">
+        Click a category above to view available schemes.
+      </div>
 
-        <button class="back-btn" onclick="goBack()" data-key="main.section3.guide-card.button">← Back to List</button>
+      <div id="categoryDetails" class="hidden"></div>
 
-        <h2 id="gTitle"></h2>
+      <section id="guidance" class="hidden">
+        <div class="guide-card">
+          <button
+            class="back-btn"
+            onclick="goBack()"
+            data-key="main.section3.guide-card.button"
+          >
+            ← Back to List
+          </button>
 
-        <p data-key="main.section3.guide-card.p1">✅ <strong>Eligibility:</strong> <span id="gEligibility"></span></p>
-        <p data-key="main.section3.guide-card.p2">💰 <strong>Benefits:</strong> <span id="gBenefits"></span></p>
-        <p data-key="main.section3.guide-card.p3">📂 <strong>Documents:</strong> <span id="gDocuments"></span></p>
-        <p data-key="main.section3.guide-card.p4">🛠 <strong>Steps to Apply:</strong> <span id="gSteps"></span></p>
+          <h2 id="gTitle"></h2>
 
-        <!-- PDF -->
-        <div id="pdfSection" class="hidden">
-          <h3 data-key="main.section3.div1.header">📄 Official Form</h3>
-          <iframe id="pdfFrame"></iframe>
-          <a id="pdfDownload" class="btn-outline" target="_blank" rel="noopener noreferrer" download
-            data-key="main.section3.div1.link">⬇Open / Download
-            PDF</a>
+          <p data-key="main.section3.guide-card.p1">
+            ✅ <strong>Eligibility:</strong> <span id="gEligibility"></span>
+          </p>
+          <p data-key="main.section3.guide-card.p2">
+            💰 <strong>Benefits:</strong> <span id="gBenefits"></span>
+          </p>
+          <p data-key="main.section3.guide-card.p3">
+            📂 <strong>Documents:</strong> <span id="gDocuments"></span>
+          </p>
+          <p data-key="main.section3.guide-card.p4">
+            🛠 <strong>Steps to Apply:</strong> <span id="gSteps"></span>
+          </p>
+
+          <!-- PDF -->
+          <div id="pdfSection" class="hidden">
+            <h3 data-key="main.section3.div1.header">📄 Official Form</h3>
+            <iframe id="pdfFrame"></iframe>
+            <a
+              id="pdfDownload"
+              class="btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              >⬇Open / Download PDF</a
+            >
+          </div>
+          <div class="actions">
+            <button
+              onclick="startReading()"
+              class="btn blue"
+              data-key="main.section3.div2.btn1"
+            >
+              🔊 Listen
+            </button>
+            <button
+              onclick="stopReading()"
+              class="btn grey"
+              data-key="main.section3.div2.btn2"
+            >
+              ⏹ Stop
+            </button>
+            <a
+              id="gLink"
+              target="_blank"
+              class="btn green"
+              data-key="main.section3.div2.link"
+              >Apply on Official Website</a
+            >
+          </div>
         </div>
-    <div id="categoryDetails" class="hidden"></div>
-
+      </section>
       <section class="apply-guidance-section">
         <h2>🧭 Important Guidance Before Applying</h2>
         <p class="section-subtitle">
@@ -114,6 +158,10 @@
               <li>🔍 Always verify website address before entering details</li>
             </ul>
           </div>
+        </div>
+        <div class="help-note">
+          📌 If you feel confused at any step, stop and take help from a trusted
+          person or visit a nearby government help center.
         </div>
       </section>
     </main>

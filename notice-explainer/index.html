@@ -19,9 +19,9 @@
     <header>Ai Notice Explainer</header>
     <div class="container">
 
-        <div class="upload-box" >
+        <div class="upload-box" onclick="fileInput.click()">
             Upload Government Notice<br>(PDF / PNG / JPG)
-            <input type="file" id="fileInput" hidden accept=".pdf,.png,.jpg,.jpeg" />
+            <input type="file" id="fileInput"  hidden accept=".pdf,.png,.jpg,.jpeg" />
         </div>
 
         <button id="readBtn" disabled>Read & Explain</button>
@@ -30,8 +30,8 @@
 
         <textarea id="rawText" placeholder="Extracted text will appear here..."></textarea>
         <div class="lang-btns">
-            <button id="enBtn">English</button>
-            <button id="knBtn">ಕನ್ನಡ</button>
+            <button id="enBtn" onclick="setLanguage('en')">English</button>
+            <button id="knBtn" onclick="setLanguage('kn')">ಕನ್ನಡ</button>
         </div>
 
         <h3 data-key="container.header1"><i class="ri-book-2-fill"></i> Simple Explanation</h3>
@@ -42,7 +42,7 @@
 
         <h3>📝 Short Summary</h3>
         <pre id="summary"></pre>
-
+        <script src="script.js"></script>
     </div>
 
 </body>
