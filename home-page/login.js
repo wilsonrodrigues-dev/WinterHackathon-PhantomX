@@ -71,11 +71,16 @@ async function handleUserRedirect(user) {
     }
   }}
 
-  function showSuccess(msg) {
+function showSuccess(msg) {
   document.getElementById("error").innerText = "";
-  document.getElementById("success").innerText = msg;
-}
+  const success = document.getElementById("success");
+  success.innerText = msg;
 
+  // wait 1.2 seconds then go to home hero
+  setTimeout(() => {
+    window.location.href = "index.html#hero";
+  }, 1200);
+}
 
 //google login
 googleBtn.addEventListener("click", async () => {
@@ -96,11 +101,15 @@ loginBtn.addEventListener("click", async () => {
       emailInput.value,
       passwordInput.value
     );
+
+    showSuccess("Signed in successfully. Welcome to SevaSaathi!");
     await handleUserRedirect(result.user);
+
   } catch (err) {
     errorText.innerText = err.message;
   }
 });
+
 
 //create account with email-password
 signupBtn.addEventListener("click", async () => {
