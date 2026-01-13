@@ -27,10 +27,11 @@ SevaSaathi does not replace government portals — it acts as a **trusted guide*
 
 # 🎥 Demo Video
 
-**Demo Video Link:**
-
+**Demo Video Link:**  
+https://drive.google.com/file/d/1IounZF_lt2bvlKAp8jf0EDc8fWCFJqj-/view?usp=sharing
 
 ---
+
 
 ## ✨ Features
 
@@ -76,29 +77,36 @@ SevaSaathi does not replace government portals — it acts as a **trusted guide*
 
 ---
 
-## 🔵 Google Technologies Used
+ ⚠️ Google products are mandatory for this hackathon.  
+ We used the following Google technologies:
 
-> ⚠️ Google products are mandatory for this hackathon.
+ * **Firebase Authentication**  
+   Used for Google and Email-Password login so users can securely register for SMS scam alerts.
 
-We used the following Google technologies:
+ * **Firebase Firestore**  
+   Used to store user phone numbers, location data, and alert preferences linked to their Firebase User ID.
 
-* **Firebase Authentication**
-  Used for Google and Email-Password login so users can securely register for SMS scam alerts.
+ * **Firebase Hosting / SDK**  
+   Used to securely host the web app and connect it with Google services.
 
-* **Firebase Firestore**
-  Used to store user phone numbers and alert preferences linked to their Firebase User ID.
+ * **Google Maps API**  
+  Used to detect and visualize user location, enabling region-specific scam alerts and localized scheme recommendations.
 
-* **Firebase Hosting / SDK**
-  Used to securely connect the web app with Google services.
+ * **Google Places API**  
+   Used to identify user city and locality, improving personalization and accuracy of alerts and scheme information.
 
-These Google technologies were chosen because they are:
+ * **Google Gemini API**  
+   Used as the AI engine to explain government schemes in simple language, summarize scam messages, and provide personalized assistance to users.
 
-* Secure
-* Scalable
-* Easy to integrate
+ These Google technologies were chosen because they are:
+
+ * Secure  
+ * Scalable  
+ * Easy to integrate  
 * Trusted for citizen-facing applications
 
----
+ ---
+
 
 ## ⚙️ Setup Instructions
 

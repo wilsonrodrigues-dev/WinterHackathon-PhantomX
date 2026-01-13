@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seva Sathi | Loading</title>
+    <link rel="stylesheet" href="./cors/loader.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #0f4c81, #1b9aaa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .loader-container {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .logo span {
+            color: #ffd166;
+        }
+
+        .spinner {
+            width: 55px;
+            height: 55px;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            border-top: 6px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        .loading-text {
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loader-container">
+        <div class="logo">Seva<span>Sathi</span></div>
+
+        <div class="spinner"></div>
+
+        <p class="loading-text">Loading government services…</p>
+    </div>
+
+</body>
+
+</html>
