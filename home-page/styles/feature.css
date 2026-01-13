@@ -12,6 +12,7 @@
 a {
     text-decoration: none;
     color: white;
+    padding: 0.7rem 3.5rem;
 }
 
 .features {
@@ -58,7 +59,7 @@ a {
 .feature-card {
     position: relative;
     overflow: hidden;
-    height: 75vh;
+    height: 50vh;
     background-color: #fffffff8;
     backdrop-filter: blur(10px);
     border-radius: 15px;
@@ -143,7 +144,6 @@ a {
     background-color: #C62828;
     transform: scale(1.05);
 }
-
 
 
 @media (min-width: 768px) {
