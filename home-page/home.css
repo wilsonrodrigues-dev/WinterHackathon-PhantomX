@@ -379,7 +379,8 @@ body {
 
 /* ===== LOGIN PAGE ===== */
 .login-page {
-background: linear-gradient(to top,#f8f1ef,#ffffff);
+/* background: linear-gradient(to top,#f8f1ef,#ffffff); */
+
 
   min-height: 100vh;
   /* background:
@@ -410,23 +411,26 @@ background: linear-gradient(to top,#f8f1ef,#ffffff);
 .hero-left {
   flex: 1;
   padding-right: 0px;
-  display: flex;
+  display: flex-start;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   /* background:url(../images/sevasaathi.png) center/cover no-repeat; */
+  background: url(../images/login.jpeg) no-repeat center/cover;
 }
 
 .hero-left h1 {
   font-size: 48px;
   color: #1a2b6d;
   margin-bottom: 20px;
+  padding: 50px;
 }
 
 .hero-left p {
   font-size: 18px;
   color: #444;
   line-height: 1.6;
+  padding-left: 50px;
 }
 
 .hero-right {
