@@ -149,10 +149,10 @@ with your own Firebase project keys.
 
 ## 👥 Team Members
 
-* **Member 1:** Wilson Rodrigues
-* **Member 2:** Rashmitha P
-* **Member 3:** Vineeth Monis
-* **Member 4:** Miranda Stephen Marcel
+* **Member 1:** Wilson Rodrigues (Backend/Frontend)
+* **Member 2:** Rashmitha P (Frontend/Database)
+* **Member 3:** Vineeth Monis (Frontend)
+* **Member 4:** Miranda Stephen Marcel (Frontend)
 
 **Team Name:** PhantomX
 **Hackathon:** GDG Winter Hackathon
