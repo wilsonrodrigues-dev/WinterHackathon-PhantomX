@@ -147,7 +147,7 @@ function showPopup(cat, index) {
                 <button class="voice-btn" onclick="speakCurrentTab()">🔊 Listen</button>
 
                 <a href="${s.link}" target="_blank" class="apply-btn">official link</a>
-                <a href="../form-page/index.html" class="apply-btn">How To Apply</a>
+                <a href="../form-guidance-page/index.html" class="apply-btn">How To Apply</a>
             </div>
 
         </div>
