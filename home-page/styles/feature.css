@@ -9,10 +9,11 @@
     --crimson-extra-light: #FD8A6B;
 }
 
-a {
+.more-btn a {
     text-decoration: none;
     color: white;
     padding: 0.7rem 3.5rem;
+    width: 231px;
 }
 
 .features {
@@ -131,7 +132,7 @@ a {
 .more-btn {
     background-color: #E53935;
     color: white;
-    padding: 0.7rem 2.5rem;
+    padding: 0.7rem 1.2rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -139,6 +140,7 @@ a {
     font-weight: 500;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 
 .more-btn:hover {
     background-color: #C62828;
