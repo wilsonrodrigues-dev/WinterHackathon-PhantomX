@@ -8,6 +8,6 @@
 
   // If language is NOT selected, redirect to language page
   if (!lang) {
-    window.location.replace("../index.html");
+    window.location.replace("../language.html");
   }
 })();
